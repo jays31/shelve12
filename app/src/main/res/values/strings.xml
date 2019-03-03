@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Shelve 12</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="action_dashboard">Dashboard</string>
+    <string name="action_store">12 Store</string>
+    <string name="action_medals">Medals</string>
+
+    <string name="action_howtoplay">How to Play?</string>
+    <string name="action_terms">Terms and Conditions</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/action_dashboard" />
+        <item
+            android:id="@+id/store"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/action_store" />
+        <item
+            android:id="@+id/medals"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/action_medals" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/howtoplay"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/action_howtoplay" />
+            <item
+                android:id="@+id/terms"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/action_terms" />
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/action_settings"
+                />
+        </menu>
+    </item>
+
+</menu>
