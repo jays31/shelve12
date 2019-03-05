@@ -18,9 +18,12 @@
             android:background="@android:color/holo_blue_dark"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main" />
+
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -29,5 +32,21 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_dialer" />
+
+    <Button
+        android:id="@+id/play_btn"
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#8BA89E"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="Play"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
 </android.support.design.widget.CoordinatorLayout>
