@@ -16,13 +16,13 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent splash = new Intent(SplashActivity.this, MainActivity.class);
+                Intent splash = new Intent(SplashActivity.this, DashboardActivity.class);
                 startActivity(splash);
                 finish();
             }
         }, SPLASH_TIME);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash_view);
+        setContentView(R.layout.splash_screen);
     }
 }
