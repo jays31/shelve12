@@ -1,6 +1,8 @@
 package mapleleafs.dal.shelve12;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -16,8 +18,20 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+//    private static int SPLASH_TIME = 4000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Intent splash = new Intent(MainActivity.this, SplashActivity.class);
+//                startActivity(splash);
+//                finish();
+//            }
+//        }, SPLASH_TIME);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
