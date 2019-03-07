@@ -33,7 +33,7 @@ public class DashboardActivity extends AppCompatActivity
         btnPlay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                Intent myIntent = new Intent(DashboardActivity.this, SplashActivity.class);
+                Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
                 startActivity(myIntent);
             }
         });
@@ -50,7 +50,7 @@ public class DashboardActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this,   drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
