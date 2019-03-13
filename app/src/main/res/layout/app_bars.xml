@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DashboardActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_gravity="bottom"
-        app:backgroundTint="@color/blueGray300"
+        app:backgroundTint="@color/blueGray100"
         app:buttonGravity="bottom|top"
         app:fabAlignmentMode="center"
         app:layout_anchorGravity="end"

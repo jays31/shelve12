@@ -13,24 +13,25 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity
+public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.nav_drawer);
+
+        BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
+        setSupportActionBar(bar);
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
-
         //setSupportActionBar(toolbar);
-        setSupportActionBar(bar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.nav_bottom, menu);
         return true;
     }
 
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
-        if (id == R.id.app_bar_user) {
+        if (id == R.id.profile) {
             Toast toast = Toast.makeText(getApplicationContext(),"Opening User Profile",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 250);
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
 
-        if (id == R.id.app_bar_qr) {
+        if (id == R.id.qrcode) {
             Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 250);
@@ -113,17 +115,17 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.dashboard) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.store) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.medals) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.tutorial) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.terms) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.action_settings) {
 
         }
 
