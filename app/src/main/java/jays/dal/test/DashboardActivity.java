@@ -5,6 +5,8 @@ import android.os.Bundle;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import android.view.Gravity;
 import android.view.View;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
@@ -34,8 +36,10 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Redirecting to XII Store", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar snack = Snackbar.make(view, "Redirecting to XII Store",
+                        Snackbar.LENGTH_LONG)
+                        .setAction("Action", null);
+                snack.show();
             }
         });
 
@@ -76,17 +80,26 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Toast.makeText(getApplicationContext(),"Opening Settings",Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(getApplicationContext(),"Opening Settings",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 250);
+            toast.show();
             return true;
         }
 
         if (id == R.id.app_bar_user) {
-            Toast.makeText(getApplicationContext(),"Opening User Profile",Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(getApplicationContext(),"Opening User Profile",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 250);
+            toast.show();
             return true;
         }
 
         if (id == R.id.app_bar_qr) {
-            Toast.makeText(getApplicationContext(),"Share QR Code",Toast.LENGTH_SHORT).show();
+            Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 250);
+            toast.show();
             return true;
         }
         return super.onOptionsItemSelected(item);

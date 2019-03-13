@@ -11,7 +11,7 @@
         android:id="@+id/app_bar_user"
         android:icon="@raw/ic_action_person_outline"
         android:title="User Profile"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/app_bar_qr"
