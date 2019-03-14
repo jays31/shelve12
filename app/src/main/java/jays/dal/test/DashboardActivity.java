@@ -1,5 +1,6 @@
 package jays.dal.test;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
@@ -41,6 +42,9 @@ public class DashboardActivity extends AppCompatActivity
                         Snackbar.LENGTH_LONG)
                         .setAction("Action", null);
                 snack.show();
+                Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
+                startActivity(myIntent);
+
             }
         });
 
