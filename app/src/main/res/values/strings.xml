@@ -9,6 +9,7 @@
     <string name="action_dashboard">Dashboard</string>
     <string name="action_store">12 Store</string>
     <string name="action_medals">Medals</string>
+    <string name="action_qrCode"> Generate QR Code</string>
 
     <string name="action_howtoplay">How to Play?</string>
     <string name="action_terms">Terms and Conditions</string>

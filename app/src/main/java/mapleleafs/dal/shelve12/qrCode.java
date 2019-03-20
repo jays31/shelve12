@@ -1,44 +1,47 @@
 package mapleleafs.dal.shelve12;
 
 import android.content.Intent;
-import android.os.Bundle;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageView;
 
-public class DashboardActivity extends AppCompatActivity
+import com.google.zxing.WriterException;
+
+import androidmads.library.qrgenearator.QRGContents;
+import androidmads.library.qrgenearator.QRGEncoder;
+
+public class qrCode extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btnPlay;
+    String TAG = "GenerateQRCode";
+    ImageView qrImage;
+    String inputValue = "jkerjfkejfkejfkejtektjektjektje;tje;tjer";
+    Bitmap bitmap;
+    QRGEncoder qrgEncoder;
     FloatingActionButton fab;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hamburger);
+        setContentView(R.layout.activity_qr_code);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        btnPlay = findViewById(R.id.btnPlay);
-
-        btnPlay.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-
-                Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
-                startActivity(myIntent);
-            }
-        });
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -55,8 +58,31 @@ public class DashboardActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+
+
+
+
+        qrImage = (ImageView) findViewById(R.id.QR_Image);
+
+        WindowManager manager = (WindowManager) getSystemService(WINDOW_SERVICE);
+        Display display = manager.getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        int width = point.x;
+        int height = point.y;
+        int smallerDimension = width < height ? width : height;
+        smallerDimension = smallerDimension * 3 / 4;
+
+        qrgEncoder = new QRGEncoder(
+                inputValue, null,
+                QRGContents.Type.TEXT,
+                smallerDimension);
+        try {
+            bitmap = qrgEncoder.encodeAsBitmap();
+            qrImage.setImageBitmap(bitmap);
+        } catch (WriterException e) {
+            Log.v(TAG, e.toString());
+        }
     }
 
     @Override
@@ -106,6 +132,8 @@ public class DashboardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.dashboard) {
+            Intent i = new Intent(qrCode.this, DashboardActivity.class);
+            startActivity(i);
             // Handle the camera action
         } else if (id == R.id.store) {
 
@@ -113,17 +141,14 @@ public class DashboardActivity extends AppCompatActivity
 
         } else if (id == R.id.howtoplay) {
 
-        } else if (id == R.id.termsandconditions) {
-            Intent i = new Intent(DashboardActivity.this, termsAndConditions.class);
-            startActivity(i);
+        } else if (id == R.id.terms) {
 
         } else if (id == R.id.settings) {
 
         } else if (id == R.id.qrCode) {
-            Intent i = new Intent(DashboardActivity.this, qrCode.class);
-            startActivity(i);
+           // Intent i = new Intent(qrCode.this, qrCode.class);
+            //startActivity(i);
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -16,6 +16,10 @@
             android:id="@+id/medals"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/action_medals" />
+        <item
+            android:id="@+id/qrCode"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/action_qrCode" />
     </group>
 
     <item android:title="Communicate">
@@ -25,7 +29,7 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="@string/action_howtoplay" />
             <item
-                android:id="@+id/terms"
+                android:id="@+id/termsandconditions"
                 android:icon="@drawable/ic_menu_camera"
                 android:title="@string/action_terms" />
             <item
