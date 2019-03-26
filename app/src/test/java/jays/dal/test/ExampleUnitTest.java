@@ -1,4 +1,4 @@
-package mapleleafs.dal.shelve12;
+package jays.dal.test;
 
 import org.junit.Test;
 

@@ -1,61 +1,63 @@
-package mapleleafs.dal.shelve12;
+package jays.dal.test;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import android.view.Gravity;
 import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.navigation.NavigationView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button btnPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hamburger);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.nav_drawer);
 
-        btnPlay = findViewById(R.id.btnPlay);
+        BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
+        setSupportActionBar(bar);
 
-        btnPlay.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-
-                Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
-                startActivity(myIntent);
-            }
-        });
-
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "To be linked with 12 Store", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar snack = Snackbar.make(view, "Redirecting to XII Store",
+                        Snackbar.LENGTH_LONG)
+                        .setAction("Action", null);
+                snack.show();
+                Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
+                startActivity(myIntent);
+
             }
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this,   drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                this, drawer, bar, R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -71,7 +73,7 @@ public class DashboardActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.nav_bottom, menu);
         return true;
     }
 
@@ -83,20 +85,33 @@ public class DashboardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.howtoplay) {
+        if (id == R.id.action_settings) {
+            Toast toast = Toast.makeText(getApplicationContext(),"Opening Settings",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 250);
+            toast.show();
             return true;
         }
 
-        else if (id == R.id.terms){
+        if (id == R.id.profile) {
+            Toast toast = Toast.makeText(getApplicationContext(),"Opening User Profile",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 250);
+            toast.show();
             return true;
         }
 
-        else if (id == R.id.settings){
+        if (id == R.id.qrcode) {
+            Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
+                    Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.BOTTOM, 0, 250);
+            toast.show();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
+
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -110,11 +125,11 @@ public class DashboardActivity extends AppCompatActivity
 
         } else if (id == R.id.medals) {
 
-        } else if (id == R.id.howtoplay) {
+        } else if (id == R.id.tutorial) {
 
         } else if (id == R.id.terms) {
 
-        } else if (id == R.id.settings) {
+        } else if (id == R.id.action_settings) {
 
         }
 

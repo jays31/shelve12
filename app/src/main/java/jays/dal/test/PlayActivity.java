@@ -1,10 +1,10 @@
-package mapleleafs.dal.shelve12;
+package jays.dal.test;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import androidx.cardview.widget.CardView;
 import android.widget.Toast;
 
 public class PlayActivity extends AppCompatActivity {
@@ -27,8 +27,6 @@ public class PlayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         getCardViews();
         setVisibiltyOfCards();
 
@@ -59,7 +57,7 @@ public class PlayActivity extends AppCompatActivity {
         cardView10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cardView4.setVisibility(View.VISIBLE);
+                cardView1.setVisibility(View.VISIBLE);
                 Toast.makeText(v.getContext(), "Card 10 Clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -67,7 +65,7 @@ public class PlayActivity extends AppCompatActivity {
         cardView11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cardView5.setVisibility(View.VISIBLE);
+                cardView2.setVisibility(View.VISIBLE);
                 Toast.makeText(v.getContext(), "Card 11 Clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -75,7 +73,7 @@ public class PlayActivity extends AppCompatActivity {
         cardView12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cardView6.setVisibility(View.VISIBLE);
+                cardView3.setVisibility(View.VISIBLE);
                 Toast.makeText(v.getContext(), "Card 12 Clicked", Toast.LENGTH_SHORT).show();
             }
         });
@@ -91,9 +89,6 @@ public class PlayActivity extends AppCompatActivity {
         cardView1.setVisibility(View.INVISIBLE);
         cardView2.setVisibility(View.INVISIBLE);
         cardView3.setVisibility(View.INVISIBLE);
-        cardView4.setVisibility(View.INVISIBLE);
-        cardView5.setVisibility(View.INVISIBLE);
-        cardView6.setVisibility(View.INVISIBLE);
     }
 
     /**
@@ -104,9 +99,7 @@ public class PlayActivity extends AppCompatActivity {
         cardView1 = findViewById(R.id.card_view_1);
         cardView2 = findViewById(R.id.card_view_2);
         cardView3 = findViewById(R.id.card_view_3);
-        cardView4 = findViewById(R.id.card_view_4);
-        cardView5 = findViewById(R.id.card_view_5);
-        cardView6 = findViewById(R.id.card_view_6);
+
         cardView7 = findViewById(R.id.card_view_7);
         cardView8 = findViewById(R.id.card_view_8);
         cardView9 = findViewById(R.id.card_view_9);
