@@ -1,5 +1,8 @@
 package jays.dal.test;
 
+import android.content.Context;
+import android.os.Vibrator;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -8,8 +11,13 @@ import java.util.List;
 import java.util.LinkedHashMap;
 import java.util.Iterator;
 import java.util.Set;
+import android.app.Activity;
 
-public class GameLogic {
+import androidx.appcompat.app.AppCompatActivity;
+
+import static android.content.Context.VIBRATOR_SERVICE;
+
+public class GameLogic extends AppCompatActivity {
 
     public static int cardid;       //to store card key selected by user from his map
     public Integer cardvalue;       //to store card value selected by user from his m
@@ -21,6 +29,9 @@ public class GameLogic {
     public List<Integer> shuffledKeys;                  // for storing hashmap keys after shuffling
     public LinkedHashMap<Integer, Integer> shuffledGlobalCards;
     public LinkedHashMap<Integer, Integer> selectedSysplayerCards;  // for first six cards selected for user to play with
+
+    public final int vibrateWinMs = 10;
+    public final int vibrateLosMs = 30;
 
     //Initial Global player. Must be called onload the page
 
@@ -141,6 +152,7 @@ public class GameLogic {
 //      card value selceted by user is bigger than system
         if (cardvalue > sysvalue) {
             userplayer.put(syskey, sysvalue);
+            hapticFeedbackWin();
             System.out.println("User won System's card");
         }
 
@@ -152,6 +164,18 @@ public class GameLogic {
 
 //      System.out.println("System playing cards " + selectedSysplayerCards); You can print this to players selected for system
         System.out.println("User playing cards now are " + userplayer); //you can print this to test when user player won
+
+    }
+
+    public void hapticFeedbackWin() {
+        Vibrator winVibrate = (Vibrator) getSystemService (Context.VIBRATOR_SERVICE);
+        winVibrate.vibrate(vibrateWinMs);
+
+    }
+
+    public void hapticFeedbackLost() {
+        Vibrator losVibrate = (Vibrator) getSystemService (Context.VIBRATOR_SERVICE);
+        losVibrate.vibrate(vibrateLosMs);
 
     }
 
