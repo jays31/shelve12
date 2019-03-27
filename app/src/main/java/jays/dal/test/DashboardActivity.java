@@ -17,16 +17,41 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
+
+
+        ////////music service
+        final Button btnPlay = (Button)findViewById(R.id.btnPlay);
+        final TextView textView = (TextView)findViewById(R.id.textView);
+
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(btnPlay.getText().equals("Start")) {
+                    Intent myService = new Intent(DashboardActivity.this, Musicservice.class);
+                    startService(myService);
+                    btnPlay.setText("Stop");
+
+                }else {
+                    Intent myService = new Intent(DashboardActivity.this, Musicservice.class);
+                    stopService(myService);
+                    btnPlay.setText("Start");
+
+                }
+            }
+        });
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         setSupportActionBar(bar);
