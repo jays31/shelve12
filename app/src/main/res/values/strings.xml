@@ -5,13 +5,13 @@
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-
-    <string name="action_dashboard">Dashboard</string>
-    <string name="action_store">12 Store</string>
-    <string name="action_medals">Medals</string>
-
-    <string name="action_howtoplay">How to Play?</string>
-    <string name="action_terms">Terms and Conditions</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="store">XII Store</string>
+    <string name="medals">Medals</string>
+    <string name="terms">Terms</string>
+    <string name="qrcode">QR Code</string>
+    <string name="profile">Profile</string>
+    <string name="tutorial">Tutorial</string>
     <string name="action_settings">Settings</string>
 
 </resources>
