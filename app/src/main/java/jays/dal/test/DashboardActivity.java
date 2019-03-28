@@ -132,6 +132,8 @@ public class DashboardActivity extends AppCompatActivity
         } else if (id == R.id.tutorial) {
 
         } else if (id == R.id.terms) {
+            Intent myIntent = new Intent(DashboardActivity.this, TermsConditions.class);
+            startActivity(myIntent);
 
         } else if (id == R.id.action_settings) {
 
