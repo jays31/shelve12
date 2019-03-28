@@ -2,9 +2,11 @@ package jays.dal.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import androidx.cardview.widget.CardView;
@@ -21,9 +23,10 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 public class PlayActivity extends AppCompatActivity {
-//
-    private TextView textView;
 
+    private TextView textView;
+    private final int vibrateWinMs = 500;
+    private Vibrator hapticFeedback;
     private static CardView cardView1;
     private static CardView cardView2;
     private static CardView cardView3;
@@ -60,7 +63,7 @@ public class PlayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play);
-
+        hapticFeedback = (Vibrator) getSystemService (Context.VIBRATOR_SERVICE);
         FloatingActionButton back = (FloatingActionButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +72,6 @@ public class PlayActivity extends AppCompatActivity {
                 Intent myIntent = new Intent(PlayActivity.this, DashboardActivity.class);
                 myIntent.putExtra(pipe,coins_val);
                 startActivity(myIntent);
-
             }
         });
 
@@ -104,12 +106,13 @@ public class PlayActivity extends AppCompatActivity {
         cardView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hapticFeedback.vibrate(vibrateWinMs);
                 cardView1.setVisibility(View.VISIBLE);
                 String val1 = textView7.getText().toString();
                 int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView1.getText().toString();
                 int j = Integer.parseInt(val2.substring(5));
-               SystemClock.sleep(300);
+                SystemClock.sleep(300);
                 if(i>j) {
                     cardView1.setVisibility(View.INVISIBLE);
                     coins+=10;
@@ -127,12 +130,13 @@ public class PlayActivity extends AppCompatActivity {
         cardView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hapticFeedback.vibrate(vibrateWinMs);
                 cardView2.setVisibility(View.VISIBLE);
                 String val1 = textView8.getText().toString();
                 int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView2.getText().toString();
                 int j = Integer.parseInt(val2.substring(5));
-               SystemClock.sleep(300);
+                SystemClock.sleep(300);
                 if(i>j) {
                     cardView2.setVisibility(View.INVISIBLE);
                     coins+=10;
@@ -150,12 +154,13 @@ public class PlayActivity extends AppCompatActivity {
         cardView9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hapticFeedback.vibrate(vibrateWinMs);
                 cardView3.setVisibility(View.VISIBLE);
                 String val1 = textView9.getText().toString();
                 int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView3.getText().toString();
                 int j = Integer.parseInt(val2.substring(5));
-               SystemClock.sleep(300);
+                SystemClock.sleep(300);
                 if(i>j) {
                     cardView3.setVisibility(View.INVISIBLE);
                     coins+=10;
@@ -173,12 +178,13 @@ public class PlayActivity extends AppCompatActivity {
         cardView10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hapticFeedback.vibrate(vibrateWinMs);
                 cardView4.setVisibility(View.VISIBLE);
                 String val1 = textView10.getText().toString();
                 int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView4.getText().toString();
                 int j = Integer.parseInt(val2.substring(5));
-               SystemClock.sleep(300);
+                SystemClock.sleep(300);
                 if(i>j) {
                     cardView4.setVisibility(View.INVISIBLE);
                     coins+=10;
@@ -196,12 +202,13 @@ public class PlayActivity extends AppCompatActivity {
         cardView11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hapticFeedback.vibrate(vibrateWinMs);
                 cardView5.setVisibility(View.VISIBLE);
                 String val1 = textView7.getText().toString();
                 int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView1.getText().toString();
                 int j = Integer.parseInt(val2.substring(5));
-               SystemClock.sleep(300);
+                SystemClock.sleep(300);
                 if(i>j) {
                     cardView5.setVisibility(View.INVISIBLE);
                     coins+=10;
@@ -219,12 +226,13 @@ public class PlayActivity extends AppCompatActivity {
         cardView12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                hapticFeedback.vibrate(vibrateWinMs);
                 cardView6.setVisibility(View.VISIBLE);
                 String val1 = textView7.getText().toString();
                 int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView1.getText().toString();
                 int j = Integer.parseInt(val2.substring(5));
-               SystemClock.sleep(300);
+                SystemClock.sleep(300);
                 if(i>j) {
                     cardView6.setVisibility(View.INVISIBLE);
                     coins+=10;
