@@ -102,11 +102,15 @@ public class DashboardActivity extends AppCompatActivity
         }
 
         if (id == R.id.qrcode) {
-            Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
+            Intent myIntent = new Intent(DashboardActivity.this, QrCode.class);
+            startActivity(myIntent);
+           // Intent i = new Intent(DashboardActivity.this, QrCode.class);
+           // startActivity(i);
+           /* Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 250);
             toast.show();
-            return true;
+            return true;*/
         }
         return super.onOptionsItemSelected(item);
     }
