@@ -17,6 +17,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +27,10 @@ public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public final static String pipe ="coins_val";
-    private TextView textView;
+    private TextView usersCoins;
+    private Button resetButton;
+    private TextView userMedals;
+
 
     CardsReaderDbHelper cardsReaderDbHelper;
     @Override
@@ -35,8 +41,11 @@ public class DashboardActivity extends AppCompatActivity
 
         Intent intent = getIntent();
         String coins_val = intent.getStringExtra(pipe);
-        textView = findViewById(R.id.coins);
-        textView.setText(String.valueOf(coins_val));
+        usersCoins = findViewById(R.id.usersCoins);
+        resetButton = findViewById(R.id.resetButton);
+        userMedals = findViewById(R.id.userMedals);
+        usersCoins.setText(String.valueOf(coins_val));
+
 
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
@@ -53,6 +62,30 @@ public class DashboardActivity extends AppCompatActivity
                 Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
                 startActivity(myIntent);
 
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                usersCoins.setText(String.valueOf(0));
+                userMedals.setText(String.valueOf(0));
+
+            }
+
+        });
+
+        final Switch simpleSwitch = (Switch) findViewById(R.id.simpleSwitch);
+        simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
+                    startService(musicIntent);
+                } else {
+                    Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
+                    stopService(musicIntent);
+
+                }
             }
         });
 
@@ -112,6 +145,8 @@ public class DashboardActivity extends AppCompatActivity
         }
 
         if (id == R.id.qrcode) {
+            Intent myIntent = new Intent(DashboardActivity.this, QRCode.class);
+            startActivity(myIntent);
             Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 250);
