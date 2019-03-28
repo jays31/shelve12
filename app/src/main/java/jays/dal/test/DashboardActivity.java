@@ -106,9 +106,10 @@ public class DashboardActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
         }
+//        else {
+//            super.onBackPressed();
+//        }
     }
 
     @Override
@@ -126,23 +127,23 @@ public class DashboardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Toast toast = Toast.makeText(getApplicationContext(),"Opening Settings",
-                    Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.BOTTOM, 0, 250);
-            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
-            startActivity(myIntent);
-            toast.show();
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            Toast toast = Toast.makeText(getApplicationContext(),"Opening Settings",
+//                    Toast.LENGTH_SHORT);
+//            toast.setGravity(Gravity.BOTTOM, 0, 250);
+//            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
+//            startActivity(myIntent);
+//            toast.show();
+//            return true;
+//        }
 
-        if (id == R.id.profile) {
-            Toast toast = Toast.makeText(getApplicationContext(),"Opening User Profile",
-                    Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.BOTTOM, 0, 250);
-            toast.show();
-            return true;
-        }
+//        if (id == R.id.profile) {
+//            Toast toast = Toast.makeText(getApplicationContext(),"Opening User Profile",
+//                    Toast.LENGTH_SHORT);
+//            toast.setGravity(Gravity.BOTTOM, 0, 250);
+//            toast.show();
+//            return true;
+//        }
 
         if (id == R.id.qrcode) {
             Intent myIntent = new Intent(DashboardActivity.this, QRCode.class);
@@ -165,19 +166,26 @@ public class DashboardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.dashboard) {
-            // Handle the camera action
-        } else if (id == R.id.store) {
 
+        } else if (id == R.id.store) {
+            Intent storeIntent = new Intent(DashboardActivity.this, XIIStore.class);
+            startActivity(storeIntent);
         } else if (id == R.id.medals) {
+            Intent medalsIntent = new Intent(DashboardActivity.this, Medals.class);
+            startActivity(medalsIntent);
 
         } else if (id == R.id.tutorial) {
+            Intent tutorialIntent = new Intent(DashboardActivity.this, TutorialActivity.class);
+            startActivity(tutorialIntent);
 
         } else if (id == R.id.terms) {
-
-        } else if (id == R.id.action_settings) {
-            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
-            startActivity(myIntent);
+            Intent termsIntent = new Intent(DashboardActivity.this, Terms.class);
+            startActivity(termsIntent);
         }
+//        else if (id == R.id.action_settings) {
+//            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
+//            startActivity(myIntent);
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
