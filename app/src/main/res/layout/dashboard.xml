@@ -45,7 +45,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:text="Statistics:"
+            android:text="Statistics"
             android:textColor="#353535"
             android:textSize="16dp" />
 
@@ -96,7 +96,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="10"
+                android:text="1"
                 android:gravity="center_horizontal"
                 />
 
@@ -142,13 +142,14 @@
                 />
 
             <TextView
+                android:id="@+id/coins"
                 android:layout_marginTop="16dp"
                 android:textSize="30dp"
                 android:textColor="#00A9DE"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="195dp"
-                android:text="160"
+                android:text="0"
                 android:gravity="center_horizontal"
                 />
 

@@ -18,8 +18,17 @@ import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import android.text.TextUtils;
 import android.view.MenuItem;
+import android.view.View;
+import com.google.android.material.bottomappbar.BottomAppBar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On
@@ -38,6 +47,7 @@ public class SettingsActivity extends PreferenceActivity {
      * A preference value change listener that updates the preference's summary
      * to reflect its new value.
      */
+
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
         public boolean onPreferenceChange(Preference preference, Object value) {

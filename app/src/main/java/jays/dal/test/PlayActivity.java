@@ -2,15 +2,19 @@ package jays.dal.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -19,6 +23,8 @@ import java.util.List;
 import java.util.Map;
 
 public class PlayActivity extends AppCompatActivity {
+//
+    private TextView textView;
 
     private static CardView cardView1;
     private static CardView cardView2;
@@ -47,12 +53,29 @@ public class PlayActivity extends AppCompatActivity {
     private static TextView textView11;
     private static TextView textView12;
 
+    private int coins=100;
+    public final static String pipe ="coins_val";
+
     GameLogic gameLogic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play);
+
+        FloatingActionButton back = (FloatingActionButton) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String coins_val = String.valueOf(coins);
+                Intent myIntent = new Intent(PlayActivity.this, DashboardActivity.class);
+                myIntent.putExtra(pipe,coins_val);
+                startActivity(myIntent);
+
+            }
+        });
+
+
         getCardViews();
         getTextViews();
         setVisibiltyOfCards();
@@ -91,6 +114,7 @@ public class PlayActivity extends AppCompatActivity {
                SystemClock.sleep(500);
                 if(i>j) {
                     cardView1.setVisibility(View.INVISIBLE);
+                    coins+=10;
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
@@ -113,6 +137,7 @@ public class PlayActivity extends AppCompatActivity {
                SystemClock.sleep(500);
                 if(i>j) {
                     cardView2.setVisibility(View.INVISIBLE);
+                    coins+=10;
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
@@ -135,6 +160,7 @@ public class PlayActivity extends AppCompatActivity {
                SystemClock.sleep(500);
                 if(i>j) {
                     cardView3.setVisibility(View.INVISIBLE);
+                    coins+=10;
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
@@ -157,6 +183,7 @@ public class PlayActivity extends AppCompatActivity {
                SystemClock.sleep(500);
                 if(i>j) {
                     cardView4.setVisibility(View.INVISIBLE);
+                    coins+=10;
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
@@ -179,6 +206,7 @@ public class PlayActivity extends AppCompatActivity {
                SystemClock.sleep(500);
                 if(i>j) {
                     cardView5.setVisibility(View.INVISIBLE);
+                    coins+=10;
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
@@ -201,6 +229,7 @@ public class PlayActivity extends AppCompatActivity {
                SystemClock.sleep(500);
                 if(i>j) {
                     cardView6.setVisibility(View.INVISIBLE);
+                    coins+=10;
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
@@ -268,5 +297,6 @@ public class PlayActivity extends AppCompatActivity {
         textView12 = findViewById(R.id.Rank12);
 
     }
+
 
 }
