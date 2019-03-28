@@ -142,13 +142,14 @@
                 />
 
             <TextView
+                android:id="@+id/coinsCount"
                 android:layout_marginTop="16dp"
                 android:textSize="30dp"
                 android:textColor="#00A9DE"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="195dp"
-                android:text="160"
+                android:text="100"
                 android:gravity="center_horizontal"
                 />
 
