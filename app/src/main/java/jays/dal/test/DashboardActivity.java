@@ -22,17 +22,15 @@ import android.widget.Toast;
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    CardsReaderDbHelper cardsReaderDbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
+        cardsReaderDbHelper = new CardsReaderDbHelper(this);
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         setSupportActionBar(bar);
-
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

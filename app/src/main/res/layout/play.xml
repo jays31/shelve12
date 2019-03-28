@@ -50,7 +50,7 @@
 
     <!-- This layout is used to create the cards for the computer   -->
     <LinearLayout
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="8dp"
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:orientation="horizontal"
@@ -61,17 +61,21 @@
             android:layout_marginRight="7dp"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_1"
-            android:layout_width="116dp"
-            android:layout_height="190dp"
+            android:layout_width="62dp"
+            android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="8dp"
             >
+            <TextView
+                android:id="@+id/Rank1"
+                android:layout_width="match_parent"
+                android:layout_height="113dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/card"
+                android:src="@raw/player1"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
 
@@ -83,17 +87,21 @@
             android:layout_marginRight="7dp"
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_2"
-            android:layout_width="116dp"
-            android:layout_height="190dp"
+            android:layout_width="62dp"
+            android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="8dp"
             >
+            <TextView
+                android:id="@+id/Rank2"
+                android:layout_width="match_parent"
+                android:layout_height="113dp" />
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/card"
+                android:src="@raw/player2"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
                 />
@@ -103,17 +111,101 @@
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_3"
-            android:layout_width="116dp"
-            android:layout_height="190dp"
+            android:layout_width="62dp"
+            android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="8dp"
             card_view:cardElevation="8dp"
             >
 
+            <TextView
+                android:id="@+id/Rank3"
+                android:layout_width="match_parent"
+                android:layout_height="113dp" />
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/card"
+                android:src="@raw/player3"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_marginRight="7dp"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_4"
+            android:layout_width="62dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp"
+            >
+
+            <TextView
+                android:id="@+id/Rank4"
+                android:layout_width="match_parent"
+                android:layout_height="113dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@raw/player4"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+
+                />
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_marginRight="7dp"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_5"
+            android:layout_width="62dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp"
+            >
+
+            <TextView
+                android:id="@+id/Rank5"
+                android:layout_width="match_parent"
+                android:layout_height="113dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@raw/player5"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginRight="7dp"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_6"
+            android:layout_width="62dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="8dp"
+            card_view:cardElevation="8dp"
+            >
+
+            <TextView
+                android:id="@+id/Rank6"
+                android:layout_width="match_parent"
+                android:layout_height="113dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@raw/player6"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
                 />
@@ -135,14 +227,14 @@
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_7"
-            android:layout_width="70dp"
+            android:layout_width="62dp"
             android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="8dp">
             <TextView
+                android:id="@+id/Rank7"
                 android:layout_width="match_parent"
-                android:layout_height="113dp"
-                android:text="Rank 7" />
+                android:layout_height="113dp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -155,14 +247,14 @@
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_8"
-            android:layout_width="70dp"
+            android:layout_width="62dp"
             android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="4dp">
             <TextView
+                android:id="@+id/Rank8"
                 android:layout_width="match_parent"
-                android:layout_height="113dp"
-                android:text="Rank 8" />
+                android:layout_height="113dp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -175,16 +267,17 @@
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_9"
-            android:layout_width="70dp"
+            android:layout_width="62dp"
             android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="4dp">
             <TextView
+                android:id="@+id/Rank9"
                 android:layout_width="match_parent"
-                android:layout_height="113dp"
-                android:text="Rank 9" />
+                android:layout_height="113dp" />
 
             <ImageView
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@raw/player9"
@@ -195,14 +288,14 @@
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_10"
-            android:layout_width="70dp"
+            android:layout_width="62dp"
             android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="4dp">
             <TextView
+                android:id="@+id/Rank10"
                 android:layout_width="match_parent"
-                android:layout_height="113dp"
-                android:text="Rank 10" />
+                android:layout_height="113dp" />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -215,14 +308,15 @@
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_11"
-            android:layout_width="70dp"
+            android:layout_width="62dp"
             android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="4dp">
             <TextView
+                android:id="@+id/Rank11"
                 android:layout_width="match_parent"
                 android:layout_height="113dp"
-                android:text="Rank 11" />
+                />
 
             <ImageView
                 android:layout_width="match_parent"
@@ -235,14 +329,15 @@
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view_12"
-            android:layout_width="70dp"
+            android:layout_width="62dp"
             android:layout_height="115dp"
             android:layout_gravity="center"
             card_view:cardCornerRadius="4dp">
             <TextView
+                android:id="@+id/Rank12"
                 android:layout_width="match_parent"
                 android:layout_height="113dp"
-                android:text="Rank 12" />
+                />
 
             <ImageView
                 android:layout_width="match_parent"
