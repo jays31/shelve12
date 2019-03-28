@@ -17,10 +17,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public final static String pipe ="coins_val";
+    private TextView textView;
 
     CardsReaderDbHelper cardsReaderDbHelper;
     @Override
@@ -28,6 +32,12 @@ public class DashboardActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
         cardsReaderDbHelper = new CardsReaderDbHelper(this);
+
+        Intent intent = getIntent();
+        String coins_val = intent.getStringExtra(pipe);
+        textView = findViewById(R.id.coins);
+        textView.setText(String.valueOf(coins_val));
+
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         setSupportActionBar(bar);
