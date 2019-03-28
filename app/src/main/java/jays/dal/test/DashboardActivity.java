@@ -89,6 +89,8 @@ public class DashboardActivity extends AppCompatActivity
             Toast toast = Toast.makeText(getApplicationContext(),"Opening Settings",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 250);
+            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
+            startActivity(myIntent);
             toast.show();
             return true;
         }
@@ -130,7 +132,8 @@ public class DashboardActivity extends AppCompatActivity
         } else if (id == R.id.terms) {
 
         } else if (id == R.id.action_settings) {
-
+            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
+            startActivity(myIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
