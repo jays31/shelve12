@@ -113,7 +113,7 @@ public class PlayActivity extends AppCompatActivity {
                 if(i>j) {
                     cardView1.setVisibility(View.INVISIBLE);
                     coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
                 else{
@@ -136,7 +136,7 @@ public class PlayActivity extends AppCompatActivity {
                 if(i>j) {
                     cardView2.setVisibility(View.INVISIBLE);
                     coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
                 else{
@@ -159,7 +159,7 @@ public class PlayActivity extends AppCompatActivity {
                 if(i>j) {
                     cardView3.setVisibility(View.INVISIBLE);
                     coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
                 else{
@@ -182,7 +182,7 @@ public class PlayActivity extends AppCompatActivity {
                 if(i>j) {
                     cardView4.setVisibility(View.INVISIBLE);
                     coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
                 else{
@@ -205,7 +205,7 @@ public class PlayActivity extends AppCompatActivity {
                 if(i>j) {
                     cardView5.setVisibility(View.INVISIBLE);
                     coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
                 else{
@@ -228,7 +228,8 @@ public class PlayActivity extends AppCompatActivity {
                 if(i>j) {
                     cardView6.setVisibility(View.INVISIBLE);
                     coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins",
+                            Snackbar.LENGTH_LONG) .setAction("Action", null);
                     snack.show();
                 }
                 else{
@@ -296,5 +297,10 @@ public class PlayActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(PlayActivity.this, DashboardActivity.class);
+        startActivity(myIntent);
+    }
 
 }
