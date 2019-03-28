@@ -3,6 +3,7 @@ package jays.dal.test;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.List;
 import java.util.LinkedHashMap;
@@ -51,7 +52,7 @@ public class GameLogic {
         System.out.println("Initial Global Cards " + sysplayer);
     }
 
-//  Shuffling the global map before six is selected for the user player. Must be called on load time
+    //  Shuffling the global map before six is selected for the user player. Must be called on load time
     public LinkedHashMap<Integer, Integer> shuffleMap() {
         shuffledGlobalCards = new LinkedHashMap<Integer, Integer>();
         List<Integer> cardShuffling = new ArrayList(sysplayer.keySet());
@@ -59,21 +60,14 @@ public class GameLogic {
         shuffledKeys = new ArrayList();
 
         for (Integer thisIndex : cardShuffling) {
-
             shuffledKeys.add(thisIndex);
             shuffledGlobalCards.put(thisIndex, sysplayer.get(thisIndex));
-
-//           System.out.println("------------------------------------------------");
-//           System.out.println("Checking ShuffledCards");
-//           System.out.println("key: " + key + " value: " + shuffledGlobalCards.get(key));
         }
-//        System.out.println("shuffledCards=" + shuffledKeys);
-        System.out.println("Shuffled Global Cards " + shuffledGlobalCards);
         return shuffledGlobalCards;
     }
 
-//  assigning six cards from the global shuffled cards. Must be called onload the web page
-    public void setUserplayer() {
+    //  assigning six cards from the global shuffled cards. Must be called onload the web page
+    public LinkedHashMap<Integer, Integer> setUserplayer() {
 
         userplayer = new LinkedHashMap<Integer, Integer>();
         int increasecount = 1;
@@ -82,16 +76,9 @@ public class GameLogic {
 
             Entry<Integer, Integer> firstRecord = sysplayerEntries.next();
             userplayer.put(firstRecord.getKey(), firstRecord.getValue());
-//            sysplayer.remove(firstRecord.getKey());
             increasecount++;
         }
-        System.out.println("Randomly selected Cards for player " + userplayer);
-
-//       for (Integer key: userplayer.keySet()) {
-//             System.out.println("------------------------------------------------");
-//             System.out.println("Iterating UserPlayer cards");
-//             System.out.println("key: " + key + " value: " + userplayer.get(key));
-//        }
+        return userplayer;
     }
 
 //  remove the six cards assigned to userplayer from the global shuffled cards. Must be called on load
@@ -100,14 +87,13 @@ public class GameLogic {
         for (Integer key : userPlayerKeys) {
             shuffledGlobalCards.remove(key);
         }
-        System.out.println("Remaining system player keys after removing User player cards " + shuffledGlobalCards);
     }
 
 
 //    call this method when displaying six cards selected for system player to play with. Use IDs obtained from this function
 //    this method to assign to cards for the players
 
-    public void getFirstSixGlobalShuffledCards() {
+    public LinkedHashMap<Integer, Integer> getFirstSixGlobalShuffledCards() {
         List<Integer> globalplayerset = new ArrayList(shuffledGlobalCards.keySet());
         selectedSysplayerCards = new LinkedHashMap<Integer, Integer>();
         int countsixplayers = 1;
@@ -117,53 +103,15 @@ public class GameLogic {
             }
             countsixplayers++;
         }
-        System.out.println("selected Cars for Player to play with " + selectedSysplayerCards);
+        return selectedSysplayerCards;
     }
 
     public Integer onClickCardToPlay(Integer actualcardid) {
-
         cardvalue = userplayer.get(actualcardid);
-        //HashMap<Integer, Integer> sysSelection= new HashMap<>(); //instantiate new map variable
         Entry<Integer, Integer> selectFirst = selectedSysplayerCards.entrySet().iterator().next(); //declare variable to store first key and value from hash map
         syskey = selectFirst.getKey(); //get key of first map
         sysvalue = selectFirst.getValue();
         // get value of card selected by user
         return cardvalue; //return method so we can access it's variables... we can choose to return the specific variables
     }
-
-    public void compareCards() {
-
-//           cardvalue=70;
-//           sysvalue=55;
-//           syskey=9024;
-//           cardid=9025;
-
-//      card value selceted by user is bigger than system
-        if (cardvalue > sysvalue) {
-            userplayer.put(syskey, sysvalue);
-            System.out.println("User won System's card");
-        }
-
-//      value of card selected by user is smaller
-        if (cardvalue < sysvalue){
-            selectedSysplayerCards.put(cardid, cardvalue);
-            System.out.println("system won your card");
-        }
-
-//      System.out.println("System playing cards " + selectedSysplayerCards); You can print this to players selected for system
-        System.out.println("User playing cards now are " + userplayer); //you can print this to test when user player won
-
-    }
-
-//  Test through this function:
-//  public static void main(String[] args) {
-//        SysPlayerWithLinkedHashMap abc=new SysPlayerWithLinkedHashMap();
-//        abc.setSysplayer();
-//        abc.shuffleMap();
-//        abc.setUserplayer();
-//        abc.removeUserAssignedCardsfromSysplayer();
-//        abc.getFirstSixGlobalShuffledCards();
-//        abc.compareCards();
-//    }
-
 }

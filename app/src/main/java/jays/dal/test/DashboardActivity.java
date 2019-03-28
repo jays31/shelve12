@@ -17,22 +17,37 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public final static String pipe ="coins_val";
+    private TextView usersCoins;
+    private Button resetButton;
+    private TextView userMedals;
 
+    CardsReaderDbHelper cardsReaderDbHelper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
+        cardsReaderDbHelper = new CardsReaderDbHelper(this);
+
+        Intent intent = getIntent();
+        String coins_val = intent.getStringExtra(pipe);
+        usersCoins = findViewById(R.id.usersCoins);
+        resetButton = findViewById(R.id.resetButton);
+        userMedals = findViewById(R.id.userMedals);
+        usersCoins.setText(String.valueOf(coins_val));
+
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         setSupportActionBar(bar);
-
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +60,31 @@ public class DashboardActivity extends AppCompatActivity
                 Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
                 startActivity(myIntent);
 
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                usersCoins.setText(String.valueOf(0));
+                userMedals.setText(String.valueOf(0));
+
+            }
+
+        });
+
+
+        final Switch simpleSwitch = (Switch) findViewById(R.id.simpleSwitch);
+        simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
+                    startService(musicIntent);
+                } else {
+                    Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
+                    stopService(musicIntent);
+
+                }
             }
         });
 
@@ -89,6 +129,8 @@ public class DashboardActivity extends AppCompatActivity
             Toast toast = Toast.makeText(getApplicationContext(),"Opening Settings",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 250);
+            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
+            startActivity(myIntent);
             toast.show();
             return true;
         }
@@ -130,7 +172,8 @@ public class DashboardActivity extends AppCompatActivity
         } else if (id == R.id.terms) {
 
         } else if (id == R.id.action_settings) {
-
+            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
+            startActivity(myIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
