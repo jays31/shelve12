@@ -69,6 +69,8 @@
             >
             <TextView
                 android:id="@+id/Rank1"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -95,6 +97,8 @@
             >
             <TextView
                 android:id="@+id/Rank2"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -120,6 +124,8 @@
 
             <TextView
                 android:id="@+id/Rank3"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -145,6 +151,8 @@
 
             <TextView
                 android:id="@+id/Rank4"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -171,6 +179,8 @@
 
             <TextView
                 android:id="@+id/Rank5"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -199,6 +209,8 @@
 
             <TextView
                 android:id="@+id/Rank6"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -233,6 +245,8 @@
             card_view:cardCornerRadius="8dp">
             <TextView
                 android:id="@+id/Rank7"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -253,6 +267,8 @@
             card_view:cardCornerRadius="4dp">
             <TextView
                 android:id="@+id/Rank8"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -273,6 +289,8 @@
             card_view:cardCornerRadius="4dp">
             <TextView
                 android:id="@+id/Rank9"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -294,6 +312,8 @@
             card_view:cardCornerRadius="4dp">
             <TextView
                 android:id="@+id/Rank10"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp" />
 
@@ -316,6 +336,8 @@
                 android:id="@+id/Rank11"
                 android:layout_width="match_parent"
                 android:layout_height="113dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 />
 
             <ImageView
@@ -335,8 +357,10 @@
             card_view:cardCornerRadius="4dp">
             <TextView
                 android:id="@+id/Rank12"
+                android:textAlignment="center"
                 android:layout_width="match_parent"
                 android:layout_height="113dp"
+                android:textStyle="bold"
                 />
 
             <ImageView

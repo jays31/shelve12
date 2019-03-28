@@ -4,19 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import androidx.cardview.widget.CardView;
 
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class PlayActivity extends AppCompatActivity {
 
@@ -63,32 +61,32 @@ public class PlayActivity extends AppCompatActivity {
         gameLogic.setUserplayer();
         List userCardList = new ArrayList(shuffledMapUserCads.values());
 
-        textView7.setText(String.valueOf(userCardList.get(0)));
-        textView8.setText(String.valueOf(userCardList.get(1)));
-        textView9.setText(String.valueOf(userCardList.get(2)));
-        textView10.setText(String.valueOf(userCardList.get(3)));
-        textView11.setText(String.valueOf(userCardList.get(4)));
-        textView12.setText(String.valueOf(userCardList.get(5)));
+        textView7.setText("Rank "+String.valueOf(userCardList.get(0)));
+        textView8.setText("Rank "+String.valueOf(userCardList.get(1)));
+        textView9.setText("Rank "+String.valueOf(userCardList.get(2)));
+        textView10.setText("Rank "+String.valueOf(userCardList.get(3)));
+        textView11.setText("Rank "+String.valueOf(userCardList.get(4)));
+        textView12.setText("Rank "+String.valueOf(userCardList.get(5)));
 
         gameLogic.removeUserAssignedCardsfromSysplayer();
         LinkedHashMap<Integer, Integer> shuffledMapSystemCards = gameLogic.getFirstSixGlobalShuffledCards();
         List systemCardList = new ArrayList(shuffledMapSystemCards.values());
-        textView1.setText(String.valueOf(systemCardList.get(0)));
-        textView2.setText(String.valueOf(systemCardList.get(1)));
-        textView3.setText(String.valueOf(systemCardList.get(2)));
-        textView4.setText(String.valueOf(systemCardList.get(3)));
-        textView5.setText(String.valueOf(systemCardList.get(4)));
-        textView6.setText(String.valueOf(systemCardList.get(5)));
+        textView1.setText("Rank "+String.valueOf(systemCardList.get(0)));
+        textView2.setText("Rank "+String.valueOf(systemCardList.get(1)));
+        textView3.setText("Rank "+String.valueOf(systemCardList.get(2)));
+        textView4.setText("Rank "+String.valueOf(systemCardList.get(3)));
+        textView5.setText("Rank "+String.valueOf(systemCardList.get(4)));
+        textView6.setText("Rank "+String.valueOf(systemCardList.get(5)));
 
         cardView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 cardView1.setVisibility(View.VISIBLE);
                 String val1 = textView7.getText().toString();
-                int i = Integer.parseInt(val1);
+                int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView1.getText().toString();
-                int j = Integer.parseInt(val2);
-               SystemClock.sleep(500);
+                int j = Integer.parseInt(val2.substring(5));
+               SystemClock.sleep(300);
                 if(i>j) {
                     cardView1.setVisibility(View.INVISIBLE);
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
@@ -107,10 +105,10 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cardView2.setVisibility(View.VISIBLE);
                 String val1 = textView8.getText().toString();
-                int i = Integer.parseInt(val1);
+                int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView2.getText().toString();
-                int j = Integer.parseInt(val2);
-               SystemClock.sleep(500);
+                int j = Integer.parseInt(val2.substring(5));
+               SystemClock.sleep(300);
                 if(i>j) {
                     cardView2.setVisibility(View.INVISIBLE);
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
@@ -129,10 +127,10 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cardView3.setVisibility(View.VISIBLE);
                 String val1 = textView9.getText().toString();
-                int i = Integer.parseInt(val1);
+                int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView3.getText().toString();
-                int j = Integer.parseInt(val2);
-               SystemClock.sleep(500);
+                int j = Integer.parseInt(val2.substring(5));
+               SystemClock.sleep(300);
                 if(i>j) {
                     cardView3.setVisibility(View.INVISIBLE);
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
@@ -151,10 +149,10 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cardView4.setVisibility(View.VISIBLE);
                 String val1 = textView10.getText().toString();
-                int i = Integer.parseInt(val1);
+                int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView4.getText().toString();
-                int j = Integer.parseInt(val2);
-               SystemClock.sleep(500);
+                int j = Integer.parseInt(val2.substring(5));
+               SystemClock.sleep(300);
                 if(i>j) {
                     cardView4.setVisibility(View.INVISIBLE);
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
@@ -173,10 +171,10 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cardView5.setVisibility(View.VISIBLE);
                 String val1 = textView7.getText().toString();
-                int i = Integer.parseInt(val1);
+                int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView1.getText().toString();
-                int j = Integer.parseInt(val2);
-               SystemClock.sleep(500);
+                int j = Integer.parseInt(val2.substring(5));
+               SystemClock.sleep(300);
                 if(i>j) {
                     cardView5.setVisibility(View.INVISIBLE);
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
@@ -195,10 +193,10 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 cardView6.setVisibility(View.VISIBLE);
                 String val1 = textView7.getText().toString();
-                int i = Integer.parseInt(val1);
+                int i = Integer.parseInt(val1.substring(5));
                 String val2 = textView1.getText().toString();
-                int j = Integer.parseInt(val2);
-               SystemClock.sleep(500);
+                int j = Integer.parseInt(val2.substring(5));
+               SystemClock.sleep(300);
                 if(i>j) {
                     cardView6.setVisibility(View.INVISIBLE);
                     Snackbar snack = Snackbar.make(v, "User Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
