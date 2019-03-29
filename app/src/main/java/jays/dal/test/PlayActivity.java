@@ -54,6 +54,13 @@ public class PlayActivity extends AppCompatActivity {
     private static TextView textView11;
     private static TextView textView12;
 
+    private boolean cardOneClicked = false;
+    private boolean cardTwoClicked = false;
+    private boolean cardThreeClicked = false;
+    private boolean cardFourClicked = false;
+    private boolean cardFiveClicked = false;
+    private boolean cardSixClicked = false;
+
     private int coins=100;
     public final static String pipe ="coins_val";
 
@@ -106,22 +113,28 @@ public class PlayActivity extends AppCompatActivity {
         cardView7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hapticFeedback.vibrate(vibrateWinMs);
-                cardView1.setVisibility(View.VISIBLE);
-                String val1 = textView7.getText().toString();
-                int i = Integer.parseInt(val1.substring(5));
-                String val2 = textView1.getText().toString();
-                int j = Integer.parseInt(val2.substring(5));
-                SystemClock.sleep(300);
-                if(i>j) {
-                    cardView1.setVisibility(View.INVISIBLE);
-                    coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
-                    snack.show();
+                if(!cardOneClicked) {
+                    cardOneClicked=true;
+                    hapticFeedback.vibrate(vibrateWinMs);
+                    cardView1.setVisibility(View.VISIBLE);
+                    String val1 = textView7.getText().toString();
+                    int i = Integer.parseInt(val1.substring(5));
+                    String val2 = textView1.getText().toString();
+                    int j = Integer.parseInt(val2.substring(5));
+                    SystemClock.sleep(300);
+                    if (i > j) {
+                        cardView1.setVisibility(View.INVISIBLE);
+                        coins += 10;
+                        Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    } else {
+                        cardView7.setVisibility(View.INVISIBLE);
+                        Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    }
                 }
                 else{
-                    cardView7.setVisibility(View.INVISIBLE);
-                    Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "Card has already been exchanged", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
                 }
             }
@@ -130,22 +143,27 @@ public class PlayActivity extends AppCompatActivity {
         cardView8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hapticFeedback.vibrate(vibrateWinMs);
-                cardView2.setVisibility(View.VISIBLE);
-                String val1 = textView8.getText().toString();
-                int i = Integer.parseInt(val1.substring(5));
-                String val2 = textView2.getText().toString();
-                int j = Integer.parseInt(val2.substring(5));
-                SystemClock.sleep(300);
-                if(i>j) {
-                    cardView2.setVisibility(View.INVISIBLE);
-                    coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
-                    snack.show();
-                }
-                else{
-                    cardView8.setVisibility(View.INVISIBLE);
-                    Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                if(!cardTwoClicked) {
+                    cardTwoClicked=true;
+                    hapticFeedback.vibrate(vibrateWinMs);
+                    cardView2.setVisibility(View.VISIBLE);
+                    String val1 = textView8.getText().toString();
+                    int i = Integer.parseInt(val1.substring(5));
+                    String val2 = textView2.getText().toString();
+                    int j = Integer.parseInt(val2.substring(5));
+                    SystemClock.sleep(300);
+                    if (i > j) {
+                        cardView2.setVisibility(View.INVISIBLE);
+                        coins += 10;
+                        Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    } else {
+                        cardView8.setVisibility(View.INVISIBLE);
+                        Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    }
+                }else{
+                    Snackbar snack = Snackbar.make(v, "Card has already been exchanged", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
                 }
             }
@@ -154,22 +172,28 @@ public class PlayActivity extends AppCompatActivity {
         cardView9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hapticFeedback.vibrate(vibrateWinMs);
-                cardView3.setVisibility(View.VISIBLE);
-                String val1 = textView9.getText().toString();
-                int i = Integer.parseInt(val1.substring(5));
-                String val2 = textView3.getText().toString();
-                int j = Integer.parseInt(val2.substring(5));
-                SystemClock.sleep(300);
-                if(i>j) {
-                    cardView3.setVisibility(View.INVISIBLE);
-                    coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
-                    snack.show();
+                if(!cardThreeClicked) {
+                    cardThreeClicked = true;
+                    hapticFeedback.vibrate(vibrateWinMs);
+                    cardView3.setVisibility(View.VISIBLE);
+                    String val1 = textView9.getText().toString();
+                    int i = Integer.parseInt(val1.substring(5));
+                    String val2 = textView3.getText().toString();
+                    int j = Integer.parseInt(val2.substring(5));
+                    SystemClock.sleep(300);
+                    if (i > j) {
+                        cardView3.setVisibility(View.INVISIBLE);
+                        coins += 10;
+                        Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    } else {
+                        cardView9.setVisibility(View.INVISIBLE);
+                        Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    }
                 }
                 else{
-                    cardView9.setVisibility(View.INVISIBLE);
-                    Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "Card has already been exchanged", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
                 }
             }
@@ -178,46 +202,59 @@ public class PlayActivity extends AppCompatActivity {
         cardView10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hapticFeedback.vibrate(vibrateWinMs);
-                cardView4.setVisibility(View.VISIBLE);
-                String val1 = textView10.getText().toString();
-                int i = Integer.parseInt(val1.substring(5));
-                String val2 = textView4.getText().toString();
-                int j = Integer.parseInt(val2.substring(5));
-                SystemClock.sleep(300);
-                if(i>j) {
-                    cardView4.setVisibility(View.INVISIBLE);
-                    coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
-                    snack.show();
+                if(!cardFourClicked) {
+                    cardFourClicked=true;
+                    hapticFeedback.vibrate(vibrateWinMs);
+                    cardView4.setVisibility(View.VISIBLE);
+                    String val1 = textView10.getText().toString();
+                    int i = Integer.parseInt(val1.substring(5));
+                    String val2 = textView4.getText().toString();
+                    int j = Integer.parseInt(val2.substring(5));
+                    SystemClock.sleep(300);
+                    if (i > j) {
+                        cardView4.setVisibility(View.INVISIBLE);
+                        coins += 10;
+                        Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    } else {
+                        cardView10.setVisibility(View.INVISIBLE);
+                        Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    }
                 }
                 else{
-                    cardView10.setVisibility(View.INVISIBLE);
-                    Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "Card has already been exchanged", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
                 }
             }
+
         });
 
         cardView11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hapticFeedback.vibrate(vibrateWinMs);
-                cardView5.setVisibility(View.VISIBLE);
-                String val1 = textView7.getText().toString();
-                int i = Integer.parseInt(val1.substring(5));
-                String val2 = textView1.getText().toString();
-                int j = Integer.parseInt(val2.substring(5));
-                SystemClock.sleep(300);
-                if(i>j) {
-                    cardView5.setVisibility(View.INVISIBLE);
-                    coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG) .setAction("Action", null);
-                    snack.show();
+                if(!cardFiveClicked) {
+                    cardFiveClicked=true;
+                    hapticFeedback.vibrate(vibrateWinMs);
+                    cardView5.setVisibility(View.VISIBLE);
+                    String val1 = textView7.getText().toString();
+                    int i = Integer.parseInt(val1.substring(5));
+                    String val2 = textView1.getText().toString();
+                    int j = Integer.parseInt(val2.substring(5));
+                    SystemClock.sleep(300);
+                    if (i > j) {
+                        cardView5.setVisibility(View.INVISIBLE);
+                        coins += 10;
+                        Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    } else {
+                        cardView11.setVisibility(View.INVISIBLE);
+                        Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    }
                 }
                 else{
-                    cardView11.setVisibility(View.INVISIBLE);
-                    Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                    Snackbar snack = Snackbar.make(v, "Card has already been exchanged", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
                 }
             }
@@ -226,23 +263,27 @@ public class PlayActivity extends AppCompatActivity {
         cardView12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                hapticFeedback.vibrate(vibrateWinMs);
-                cardView6.setVisibility(View.VISIBLE);
-                String val1 = textView7.getText().toString();
-                int i = Integer.parseInt(val1.substring(5));
-                String val2 = textView1.getText().toString();
-                int j = Integer.parseInt(val2.substring(5));
-                SystemClock.sleep(300);
-                if(i>j) {
-                    cardView6.setVisibility(View.INVISIBLE);
-                    coins+=10;
-                    Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins",
-                            Snackbar.LENGTH_LONG) .setAction("Action", null);
-                    snack.show();
-                }
-                else{
-                    cardView12.setVisibility(View.INVISIBLE);
-                    Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG) .setAction("Action", null);
+                if(!cardSixClicked) {
+                    hapticFeedback.vibrate(vibrateWinMs);
+                    cardView6.setVisibility(View.VISIBLE);
+                    String val1 = textView7.getText().toString();
+                    int i = Integer.parseInt(val1.substring(5));
+                    String val2 = textView1.getText().toString();
+                    int j = Integer.parseInt(val2.substring(5));
+                    SystemClock.sleep(300);
+                    if (i > j) {
+                        cardView6.setVisibility(View.INVISIBLE);
+                        coins += 10;
+                        Snackbar snack = Snackbar.make(v, "User Wins the Card! +10 Coins",
+                                Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    } else {
+                        cardView12.setVisibility(View.INVISIBLE);
+                        Snackbar snack = Snackbar.make(v, "System Wins the Card", Snackbar.LENGTH_LONG).setAction("Action", null);
+                        snack.show();
+                    }
+                }else{
+                    Snackbar snack = Snackbar.make(v, "Card has already been exchanged", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
                 }
             }
