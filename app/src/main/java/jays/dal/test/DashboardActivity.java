@@ -1,5 +1,6 @@
 package jays.dal.test;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -30,23 +31,22 @@ public class DashboardActivity extends AppCompatActivity
     private TextView usersCoins;
     private Button resetButton;
     private TextView userMedals;
+    private Activity activity;
 
 
-    CardsReaderDbHelper cardsReaderDbHelper;
+    UserDbHelper userDbHelper;
+    private UserDatabase userDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
-        cardsReaderDbHelper = new CardsReaderDbHelper(this);
-
+        activity = this;
         Intent intent = getIntent();
         String coins_val = intent.getStringExtra(pipe);
         usersCoins = findViewById(R.id.usersCoins);
         resetButton = findViewById(R.id.resetButton);
         userMedals = findViewById(R.id.userMedals);
         usersCoins.setText(String.valueOf(coins_val));
-
-
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         setSupportActionBar(bar);
@@ -190,5 +190,11 @@ public class DashboardActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        userDatabase.closeDatabase();
     }
 }
