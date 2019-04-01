@@ -49,7 +49,6 @@ public class GameLogic {
         sysplayer.put(9020, 50);
         sysplayer.put(9021, 55);
         sysplayer.put(9022, 60);
-        System.out.println("Initial Global Cards " + sysplayer);
     }
 
     //  Shuffling the global map before six is selected for the user player. Must be called on load time
