@@ -18,29 +18,28 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.zxing.WriterException;
-
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class QrCode extends AppCompatActivity {
+public class QRCode extends AppCompatActivity {
 
     String TAG = "GenerateQRCode";
     ImageView qrImage;
-    String inputValue = "shehzeen";
+    String inputValue = "Shelve12";
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qr_code);
+        setContentView(R.layout.qrcode);
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(QrCode.this, DashboardActivity.class);
+                Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }
@@ -50,7 +49,7 @@ public class QrCode extends AppCompatActivity {
         bar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(QrCode.this, DashboardActivity.class);
+                Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }
@@ -77,5 +76,11 @@ public class QrCode extends AppCompatActivity {
         } catch (WriterException e) {
             Log.v(TAG, e.toString());
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
+        startActivity(myIntent);
     }
 }

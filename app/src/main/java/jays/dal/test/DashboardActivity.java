@@ -1,5 +1,6 @@
 package jays.dal.test;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -17,22 +18,38 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class DashboardActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public final static String pipe ="coins_val";
+    private TextView usersCoins;
+    private Button resetButton;
+    private TextView userMedals;
+    private Activity activity;
 
+
+    UserDbHelper userDbHelper;
+    private UserDatabase userDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
+        activity = this;
+        Intent intent = getIntent();
+        String coins_val = intent.getStringExtra(pipe);
+        usersCoins = findViewById(R.id.usersCoins);
+        resetButton = findViewById(R.id.resetButton);
+        userMedals = findViewById(R.id.userMedals);
+        usersCoins.setText(String.valueOf(coins_val));
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         setSupportActionBar(bar);
-
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +64,30 @@ public class DashboardActivity extends AppCompatActivity
 
             }
         });
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                usersCoins.setText(String.valueOf(0));
+                userMedals.setText(String.valueOf(0));
+
+            }
+
+        });
+
+        /*final Switch simpleSwitch = (Switch) findViewById(R.id.simpleSwitch);
+        simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
+                    startService(musicIntent);
+                } else {
+                    Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
+                    stopService(musicIntent);
+
+                }
+            }
+        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -65,9 +106,10 @@ public class DashboardActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
         }
+//        else {
+//            super.onBackPressed();
+//        }
     }
 
     @Override
@@ -85,32 +127,32 @@ public class DashboardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Toast toast = Toast.makeText(getApplicationContext(),"Opening Settings",
-                    Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.BOTTOM, 0, 250);
-            toast.show();
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            Toast toast = Toast.makeText(getApplicationContext(),"Opening Settings",
+//                    Toast.LENGTH_SHORT);
+//            toast.setGravity(Gravity.BOTTOM, 0, 250);
+//            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
+//            startActivity(myIntent);
+//            toast.show();
+//            return true;
+//        }
 
-        if (id == R.id.profile) {
-            Toast toast = Toast.makeText(getApplicationContext(),"Opening User Profile",
-                    Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.BOTTOM, 0, 250);
-            toast.show();
-            return true;
-        }
+//        if (id == R.id.profile) {
+//            Toast toast = Toast.makeText(getApplicationContext(),"Opening User Profile",
+//                    Toast.LENGTH_SHORT);
+//            toast.setGravity(Gravity.BOTTOM, 0, 250);
+//            toast.show();
+//            return true;
+//        }
 
         if (id == R.id.qrcode) {
-            Intent myIntent = new Intent(DashboardActivity.this, QrCode.class);
+            Intent myIntent = new Intent(DashboardActivity.this, QRCode.class);
             startActivity(myIntent);
-           // Intent i = new Intent(DashboardActivity.this, QrCode.class);
-           // startActivity(i);
-           /* Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
+            Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
                     Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.BOTTOM, 0, 250);
             toast.show();
-            return true;*/
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -124,23 +166,35 @@ public class DashboardActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.dashboard) {
-            // Handle the camera action
-        } else if (id == R.id.store) {
 
+        } else if (id == R.id.store) {
+            Intent storeIntent = new Intent(DashboardActivity.this, XIIStore.class);
+            startActivity(storeIntent);
         } else if (id == R.id.medals) {
+            Intent medalsIntent = new Intent(DashboardActivity.this, Medals.class);
+            startActivity(medalsIntent);
 
         } else if (id == R.id.tutorial) {
+            Intent tutorialIntent = new Intent(DashboardActivity.this, TutorialActivity.class);
+            startActivity(tutorialIntent);
 
         } else if (id == R.id.terms) {
-            Intent myIntent = new Intent(DashboardActivity.this, TermsConditions.class);
-            startActivity(myIntent);
-
-        } else if (id == R.id.action_settings) {
-
+            Intent termsIntent = new Intent(DashboardActivity.this, Terms.class);
+            startActivity(termsIntent);
         }
+//        else if (id == R.id.action_settings) {
+//            Intent myIntent = new Intent(DashboardActivity.this, SettingsActivity.class);
+//            startActivity(myIntent);
+//        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        userDatabase.closeDatabase();
     }
 }

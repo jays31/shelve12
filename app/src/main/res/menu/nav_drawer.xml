@@ -27,10 +27,10 @@
             android:id="@+id/terms"
             android:icon="@raw/ic_action_terms"
             android:title="@string/terms" />
-        <item
-            android:id="@+id/action_settings"
-            android:icon="@raw/ic_action_settings"
-            android:title="@string/action_settings" />
+        <!--<item-->
+            <!--android:id="@+id/action_settings"-->
+            <!--android:icon="@raw/ic_action_settings"-->
+            <!--android:title="@string/action_settings" />-->
 
     </group>
 
