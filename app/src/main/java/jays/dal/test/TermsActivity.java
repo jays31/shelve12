@@ -17,11 +17,9 @@ public class TermsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_terms);
 
         TextView terms = findViewById(R.id.terms);
-        TextView textHint = findViewById(R.id.textHint);
-        textHint.setText("Terms and Conditions");
-        terms.setText("By downloading Shelve 12 from the Play Store you are accepting the " +
+       terms.setText("By downloading Shelve 12 from the Play Store you are accepting the " +
                 "below mentioned terms and conditions:\n\n" +
-                "Shelve 12 has the authority to amend the rules og Game Play at any time " +
+                "Shelve 12 has the authority to amend the rules of Game Play at any time " +
                 "upon mutual consent of all the Maple Leafs members.\n\n" +
                 "You are 12 years or older while using the application.In case " +
                 "you are below the minimum age, your parents or legal guardians must have " +
