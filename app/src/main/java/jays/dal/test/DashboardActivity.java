@@ -70,9 +70,12 @@ public class DashboardActivity extends AppCompatActivity
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Start for Bug Fix: Reset button not updating Database
                 usersCoins.setText(String.valueOf(0));
                 userMedals.setText(String.valueOf(0));
-
+                UserModel userModel = new UserModel(0,"Manpreet");
+                userDatabase.updateUser(userModel);
+//                End for Bug Fix: Reset button not updating Database
             }
 
         });
