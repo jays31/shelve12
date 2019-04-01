@@ -41,13 +41,15 @@ public class DashboardActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
         activity = this;
-        Intent intent = getIntent();
-        String coins_val = intent.getStringExtra(pipe);
+        //Intent intent = getIntent();
+        //String coins_val = intent.getStringExtra(pipe);
         usersCoins = findViewById(R.id.usersCoins);
         resetButton = findViewById(R.id.resetButton);
         userMedals = findViewById(R.id.userMedals);
-        usersCoins.setText(String.valueOf(coins_val));
-
+        userDbHelper = new UserDbHelper(this);
+        userDatabase = new UserDatabase(activity);
+        UserModel userModel = userDatabase.selectUser();
+        usersCoins.setText(String.valueOf(userModel.getCoinsCount()));
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         setSupportActionBar(bar);
 

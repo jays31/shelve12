@@ -19,7 +19,8 @@ public class UserDataQueries
     private UserDbHelper dbHelper;
 
     private String[] userColumns = {UserDbHelper.UserEntry._ID,
-                                    UserDbHelper.UserEntry.COLUMN_COINS_COUNT};
+                                    UserDbHelper.UserEntry.COLUMN_COINS_COUNT,
+                                    UserDbHelper.UserEntry.COLUMN_USER_NAME};
 
     public UserDataQueries(Context context)
     {
@@ -37,6 +38,7 @@ public class UserDataQueries
     {
         ContentValues contentValues = new ContentValues();
         contentValues.put(UserDbHelper.UserEntry.COLUMN_COINS_COUNT, userModel.getCoinsCount());
+        contentValues.put(UserDbHelper.UserEntry.COLUMN_USER_NAME, userModel.getUserName());
         long insertUserId = database.insert(UserDbHelper.UserEntry.TABLE_NAME,null, contentValues);
         Log.i(getClass().getName(),String.valueOf(insertUserId));
         Cursor cursor = database.query(UserDbHelper.UserEntry.TABLE_NAME,
@@ -52,7 +54,7 @@ public class UserDataQueries
     private UserModel getCardDataFromCursor(Cursor cursor)
     {
         if(null!=cursor && cursor.moveToFirst()) {
-            return new UserModel(cursor.getInt(1));
+            return new UserModel(cursor.getInt(1),cursor.getString(2));
         }
         return  null;
     }
@@ -76,10 +78,38 @@ public class UserDataQueries
         boolean isFirst= mContext.getSharedPreferences(SHARED_PREF_USER,Context.MODE_PRIVATE).
                 getBoolean(IS_FIRST_TIME,true);
         if(isFirst){
+            createCard(new UserModel(100,"Manpreet"));
             mContext.getSharedPreferences(SHARED_PREF_USER, Context.MODE_PRIVATE).edit()
                     .putBoolean(IS_FIRST_TIME, false).apply();
         }
         return isFirst;
+    }
+
+    public boolean updateUser(UserModel userModel){
+        ContentValues cv= new ContentValues();
+        cv.put(UserDbHelper.UserEntry.COLUMN_USER_NAME,userModel.getUserName());
+        cv.put(UserDbHelper.UserEntry.COLUMN_COINS_COUNT,userModel.getCoinsCount());
+        try {
+
+            return database.update(UserDbHelper.UserEntry.TABLE_NAME, cv,
+                    UserDbHelper.UserEntry.COLUMN_USER_NAME + " = 'Manpreet'",
+                    null) > 0;
+        }catch(Exception e){
+            e.getMessage();
+        }
+        return false;
+    }
+
+    public UserModel selectUser(String  userName){
+        int coinsCount=0;
+        String user="";
+        UserModel userModel = new UserModel(coinsCount,user);
+        Cursor cursor = database.rawQuery("SELECT * FROM user WHERE user_name = ?", new String[]{userName});
+        if(cursor.moveToFirst()){
+            userModel.setCoinsCount(cursor.getInt(1));
+            userModel.setUserName(cursor.getString(2));
+        }
+        return  userModel;
     }
 }
 

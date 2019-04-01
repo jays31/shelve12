@@ -9,8 +9,19 @@ public class UserModel {
 
     private int coinsCount;
 
-    public UserModel(int coinsCount) {
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    private String userName;
+
+    public UserModel(int coinsCount,String userName) {
         this.coinsCount=coinsCount;
+        this.userName=userName;
     }
 
     public int getCoinsCount() {

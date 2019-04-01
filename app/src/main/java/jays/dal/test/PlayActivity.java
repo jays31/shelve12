@@ -59,7 +59,7 @@ public class PlayActivity extends AppCompatActivity {
     private boolean cardFiveClicked = false;
     private boolean cardSixClicked = false;
 
-    private int coins=100;
+    private int coins;
     public final static String pipe ="coins_val";
 
     private UserDatabase userDatabase;
@@ -72,6 +72,11 @@ public class PlayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play);
         mActivity=this;
+        userDbHelper = new UserDbHelper(this);
+        userDatabase = new UserDatabase(mActivity);
+        UserModel userModel = userDatabase.selectUser();
+        coins = userModel.getCoinsCount();
+
         hapticFeedback = (Vibrator) getSystemService (Context.VIBRATOR_SERVICE);
         FloatingActionButton back = (FloatingActionButton) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -82,8 +87,13 @@ public class PlayActivity extends AppCompatActivity {
                 myIntent.putExtra(pipe,coins_val);
                 // Start for Bug Fix: Inserting the coins into database
                 userDbHelper = new UserDbHelper(mActivity);
-                userDatabase = new UserDatabase(mActivity,coins);
+                userDatabase = new UserDatabase(mActivity);
                 // End for Bug Fix: Inserting the coins into database
+                UserModel userModel = new UserModel(coins,"Manpreet");
+                userDatabase.updateUser(userModel);
+                UserModel userModel1 = userDatabase.selectUser();
+                System.out.println(userModel1.getCoinsCount());
+                System.out.println(userModel1.getUserName());
                 startActivity(myIntent);
             }
         });
@@ -354,7 +364,9 @@ public class PlayActivity extends AppCompatActivity {
     public void onBackPressed() {
         Intent myIntent = new Intent(PlayActivity.this, DashboardActivity.class);
         userDbHelper = new UserDbHelper(this);
-        userDatabase = new UserDatabase(mActivity,coins);
+        userDatabase = new UserDatabase(mActivity);
+        UserModel userModel = new UserModel(coins,"Manpreet");
+        userDatabase.updateUser(userModel);
         startActivity(myIntent);
     }
 

@@ -1,6 +1,7 @@
 package jays.dal.test;
 
 import android.content.Context;
+import android.database.Cursor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +15,10 @@ public class UserDatabase {
     private final UserDataQueries userDataQueries;
     private List<UserModel> userList = new ArrayList<>();
 
-    public UserDatabase(Context context,int coinsCount){
+    public UserDatabase(Context context){
         userDataQueries = new UserDataQueries(context);
         userDataQueries.open();
-        if(userDataQueries.isAppRunningFirstTime()) {
-            userDataQueries.createCard(new UserModel(coinsCount));
-        }
+        userDataQueries.isAppRunningFirstTime();
         userList = userDataQueries.getUserData();
         if(null!=userList && userList.size()>0) {
             for(int i=0;i<userList.size();i++) {
@@ -33,6 +32,22 @@ public class UserDatabase {
      */
     public void closeDatabase(){
         userDataQueries.close();
+    }
+
+
+    /**
+     * @param userModel
+     * @return
+     * This method will
+     * update the coins of a user
+     */
+    public boolean updateUser(UserModel userModel){
+        return userDataQueries.updateUser(userModel);
+    }
+
+
+    public UserModel selectUser(){
+        return userDataQueries.selectUser("Manpreet");
     }
 
 }
