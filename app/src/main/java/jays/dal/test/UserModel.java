@@ -9,6 +9,14 @@ public class UserModel {
 
     private int coinsCount;
 
+    private String userName;
+
+    public UserModel(int coinsCount,String userName) {
+        this.coinsCount=coinsCount;
+        this.userName=userName;
+    }
+
+
     public String getUserName() {
         return userName;
     }
@@ -17,12 +25,6 @@ public class UserModel {
         this.userName = userName;
     }
 
-    private String userName;
-
-    public UserModel(int coinsCount,String userName) {
-        this.coinsCount=coinsCount;
-        this.userName=userName;
-    }
 
     public int getCoinsCount() {
         return coinsCount;

@@ -20,11 +20,14 @@ public class UserDatabase {
         userDataQueries.open();
         userDataQueries.isAppRunningFirstTime();
         userList = userDataQueries.getUserData();
+
+        // Start code for testing purpose
         if(null!=userList && userList.size()>0) {
             for(int i=0;i<userList.size();i++) {
                 UserModel model = userList.get(i);
             }
         }
+        // End code for testing purpose
     }
 
     /**
@@ -46,6 +49,12 @@ public class UserDatabase {
     }
 
 
+    /**
+     * @return
+     * This method will return
+     * the selected users attributes
+     * from the database
+     */
     public UserModel selectUser(){
         return userDataQueries.selectUser("Manpreet");
     }

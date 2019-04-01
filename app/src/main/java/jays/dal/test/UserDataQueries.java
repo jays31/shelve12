@@ -34,7 +34,17 @@ public class UserDataQueries
 
     public void close() { dbHelper.close(); }
 
-    public UserModel createCard(UserModel userModel)
+
+    /**
+     * @param userModel
+     * @return
+     * This method wil be used
+     * to create the user and
+     * give him the coins when
+     * he plays the game for the
+     * first time
+     */
+    public UserModel createUser(UserModel userModel)
     {
         ContentValues contentValues = new ContentValues();
         contentValues.put(UserDbHelper.UserEntry.COLUMN_COINS_COUNT, userModel.getCoinsCount());
@@ -51,6 +61,13 @@ public class UserDataQueries
     }
 
 
+    /**
+     * @param cursor
+     * @return
+     * This method will store the
+     * data the user data in User Model
+     * from the cursor
+     */
     private UserModel getCardDataFromCursor(Cursor cursor)
     {
         if(null!=cursor && cursor.moveToFirst()) {
@@ -78,13 +95,19 @@ public class UserDataQueries
         boolean isFirst= mContext.getSharedPreferences(SHARED_PREF_USER,Context.MODE_PRIVATE).
                 getBoolean(IS_FIRST_TIME,true);
         if(isFirst){
-            createCard(new UserModel(100,"Manpreet"));
+            createUser(new UserModel(100,"Manpreet"));
             mContext.getSharedPreferences(SHARED_PREF_USER, Context.MODE_PRIVATE).edit()
                     .putBoolean(IS_FIRST_TIME, false).apply();
         }
         return isFirst;
     }
 
+    /**
+     * @param userModel
+     * @return
+     * This method will
+     * update the coins of existing user
+     */
     public boolean updateUser(UserModel userModel){
         ContentValues cv= new ContentValues();
         cv.put(UserDbHelper.UserEntry.COLUMN_USER_NAME,userModel.getUserName());
@@ -100,6 +123,13 @@ public class UserDataQueries
         return false;
     }
 
+    /**
+     * @param userName
+     * @return
+     * This method will be used
+     * to select a user from
+     * the database
+     */
     public UserModel selectUser(String  userName){
         int coinsCount=0;
         String user="";

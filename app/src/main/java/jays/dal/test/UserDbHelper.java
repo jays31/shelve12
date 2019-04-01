@@ -6,6 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
+/**
+ * This class will be
+ * used to create the SQL queries
+ */
 public class UserDbHelper extends SQLiteOpenHelper
 {
     public static final int DATABASE_VERSION = 1;

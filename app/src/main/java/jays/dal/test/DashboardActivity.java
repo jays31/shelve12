@@ -41,8 +41,6 @@ public class DashboardActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
         activity = this;
-        //Intent intent = getIntent();
-        //String coins_val = intent.getStringExtra(pipe);
         usersCoins = findViewById(R.id.usersCoins);
         resetButton = findViewById(R.id.resetButton);
         userMedals = findViewById(R.id.userMedals);
