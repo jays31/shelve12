@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Terms"></activity>
-        <activity android:name=".Medals" />
-        <activity android:name=".XIIStore" />
+        <activity android:name=".TermsActivity"></activity>
+        <activity android:name=".MedalsActivity" />
+        <activity android:name=".XIIStoreActivity" />
         <activity android:name=".TutorialActivity" />
-        <activity android:name=".QRCode" />
+        <activity android:name=".QRCodeActivity" />
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />

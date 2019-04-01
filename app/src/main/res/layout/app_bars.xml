@@ -63,6 +63,6 @@
         app:layout_anchorGravity="end"
         />
 
-    <include layout="@layout/dashboard" />
+    <include layout="@layout/activity_dashboard" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

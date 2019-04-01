@@ -70,7 +70,7 @@ public class PlayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.play);
+        setContentView(R.layout.activity_play);
         mActivity=this;
         userDbHelper = new UserDbHelper(this);
         userDatabase = new UserDatabase(mActivity);

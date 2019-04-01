@@ -7,9 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-public class Terms extends AppCompatActivity {
+public class TermsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +19,7 @@ public class Terms extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(Terms.this, DashboardActivity.class);
+                Intent myIntent = new Intent(TermsActivity.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }

@@ -4,25 +4,21 @@ package jays.dal.test;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.os.Environment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.zxing.WriterException;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class QRCode extends AppCompatActivity {
+public class QRCodeActivity extends AppCompatActivity {
 
     String TAG = "GenerateQRCode";
     ImageView qrImage;
@@ -32,14 +28,14 @@ public class QRCode extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.qrcode);
+        setContentView(R.layout.activity_qrcode);
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
+                Intent myIntent = new Intent(QRCodeActivity.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }
@@ -49,7 +45,7 @@ public class QRCode extends AppCompatActivity {
         bar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
+                Intent myIntent = new Intent(QRCodeActivity.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }
@@ -80,7 +76,7 @@ public class QRCode extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
+        Intent myIntent = new Intent(QRCodeActivity.this, DashboardActivity.class);
         startActivity(myIntent);
     }
 }
