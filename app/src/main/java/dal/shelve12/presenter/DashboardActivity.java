@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.shelve12.presenter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +15,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import dal.shelve12.db.UserDatabase;
+import dal.shelve12.db.UserDbHelper;
+import dal.shelve12.model.UserModel;
+import jays.dal.test.R;
 
 import android.view.Menu;
 import android.view.MenuItem;

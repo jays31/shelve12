@@ -1,10 +1,12 @@
-package jays.dal.test;
+package dal.shelve12.presenter;
 
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
+
+import jays.dal.test.R;
 
 public class MusicService extends Service {
     private static final String TAG = "MusicService";

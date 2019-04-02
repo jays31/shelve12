@@ -1,10 +1,11 @@
-package jays.dal.test;
+package dal.shelve12.db;
 
 import android.content.Context;
-import android.database.Cursor;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import dal.shelve12.model.UserModel;
 
 /**
  * This class will be used

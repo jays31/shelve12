@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.shelve12.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

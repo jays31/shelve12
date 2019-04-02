@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.shelve12.model;
 
 /**
  * This class will be

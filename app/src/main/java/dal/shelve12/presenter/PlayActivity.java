@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.shelve12.presenter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,10 @@ import android.os.SystemClock;
 import android.os.Vibrator;
 import android.view.View;
 import androidx.cardview.widget.CardView;
+import dal.shelve12.db.UserDatabase;
+import dal.shelve12.db.UserDbHelper;
+import dal.shelve12.model.UserModel;
+import jays.dal.test.R;
 
 import android.widget.TextView;
 

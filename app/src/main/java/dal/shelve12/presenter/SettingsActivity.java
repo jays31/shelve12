@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.shelve12.presenter;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -18,17 +18,10 @@ import android.preference.PreferenceManager;
 import android.preference.RingtonePreference;
 import android.text.TextUtils;
 import android.view.MenuItem;
-import android.view.View;
-import com.google.android.material.bottomappbar.BottomAppBar;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.drawerlayout.widget.DrawerLayout;
+import jays.dal.test.R;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On

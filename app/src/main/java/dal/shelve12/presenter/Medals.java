@@ -1,6 +1,10 @@
-package jays.dal.test;
+package dal.shelve12.presenter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import dal.shelve12.db.UserDatabase;
+import dal.shelve12.db.UserDbHelper;
+import dal.shelve12.model.UserModel;
+import jays.dal.test.R;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +13,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 public class Medals extends AppCompatActivity {
 

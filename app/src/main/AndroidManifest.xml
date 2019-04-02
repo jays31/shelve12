@@ -11,17 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Terms"></activity>
-        <activity android:name=".Medals" />
-        <activity android:name=".XIIStore" />
-        <activity android:name=".TutorialActivity" />
-        <activity android:name=".QRCode" />
+        <activity android:name="dal.shelve12.presenter.Terms"></activity>
+        <activity android:name="dal.shelve12.presenter.Medals" />
+        <activity android:name="dal.shelve12.presenter.XIIStore" />
+        <activity android:name="dal.shelve12.presenter.TutorialActivity" />
+        <activity android:name="dal.shelve12.presenter.QRCode" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="dal.shelve12.presenter.SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".PlayActivity" />
+        <activity android:name="dal.shelve12.presenter.PlayActivity" />
         <activity
-            android:name=".DashboardActivity"
+            android:name="dal.shelve12.presenter.DashboardActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -32,7 +32,7 @@
         </activity>
 
         <service
-            android:name=".MusicService"
+            android:name="dal.shelve12.presenter.MusicService"
             android:enabled="true" />
     </application>
 
