@@ -21,7 +21,7 @@ public class GameLogic {
     public LinkedHashMap<Integer, Integer> sysSelection;
     public List<Integer> shuffledKeys;                  // for storing hashmap keys after shuffling
     public LinkedHashMap<Integer, Integer> shuffledGlobalCards;
-    public LinkedHashMap<Integer, Integer> selectedSysplayerCards;  // for first six cards selected for user to play with
+    public LinkedHashMap<Integer, Integer> selectedSysplayerCards;  // for first six cards selected for user to activity_play with
 
     //Initial Global player. Must be called onload the page
 
@@ -89,7 +89,7 @@ public class GameLogic {
     }
 
 
-//    call this method when displaying six cards selected for system player to play with. Use IDs obtained from this function
+//    call this method when displaying six cards selected for system player to activity_play with. Use IDs obtained from this function
 //    this method to assign to cards for the players
 
     public LinkedHashMap<Integer, Integer> getFirstSixGlobalShuffledCards() {

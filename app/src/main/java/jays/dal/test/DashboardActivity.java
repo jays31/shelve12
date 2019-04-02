@@ -70,9 +70,12 @@ public class DashboardActivity extends AppCompatActivity
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Start for Bug Fix: Reset button not updating Database
                 usersCoins.setText(String.valueOf(0));
                 userMedals.setText(String.valueOf(0));
-
+                UserModel userModel = new UserModel(0,"Manpreet");
+                userDatabase.updateUser(userModel);
+//                End for Bug Fix: Reset button not updating Database
             }
 
         });
@@ -148,7 +151,7 @@ public class DashboardActivity extends AppCompatActivity
 //        }
 
         if (id == R.id.qrcode) {
-            Intent myIntent = new Intent(DashboardActivity.this, QRCode.class);
+            Intent myIntent = new Intent(DashboardActivity.this, QRCodeActivity.class);
             startActivity(myIntent);
             Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
                     Toast.LENGTH_SHORT);
@@ -170,10 +173,10 @@ public class DashboardActivity extends AppCompatActivity
         if (id == R.id.dashboard) {
 
         } else if (id == R.id.store) {
-            Intent storeIntent = new Intent(DashboardActivity.this, XIIStore.class);
+            Intent storeIntent = new Intent(DashboardActivity.this, XIIStoreActivity.class);
             startActivity(storeIntent);
         } else if (id == R.id.medals) {
-            Intent medalsIntent = new Intent(DashboardActivity.this, Medals.class);
+            Intent medalsIntent = new Intent(DashboardActivity.this, MedalsActivity.class);
             startActivity(medalsIntent);
 
         } else if (id == R.id.tutorial) {
@@ -181,7 +184,7 @@ public class DashboardActivity extends AppCompatActivity
             startActivity(tutorialIntent);
 
         } else if (id == R.id.terms) {
-            Intent termsIntent = new Intent(DashboardActivity.this, Terms.class);
+            Intent termsIntent = new Intent(DashboardActivity.this, TermsActivity.class);
             startActivity(termsIntent);
         }
 //        else if (id == R.id.action_settings) {

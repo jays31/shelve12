@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class XIIStore extends AppCompatActivity {
+public class MedalsActivity extends AppCompatActivity {
 
-    TextView usersCoins;
+    TextView userMedals;
     private Activity activity;
 
     UserDbHelper userDbHelper;
@@ -21,20 +21,24 @@ public class XIIStore extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_xiistore);
+        setContentView(R.layout.activity_medals);
 
         activity = this;
-        usersCoins = findViewById(R.id.usersCoins);
+        userMedals = findViewById(R.id.userMedals);
         userDbHelper = new UserDbHelper(this);
         userDatabase = new UserDatabase(activity);
         UserModel userModel = userDatabase.selectUser();
-        usersCoins.setText(String.valueOf(userModel.getCoinsCount()));
+
+        userMedals.setText(String.valueOf("1"));
+
+//        Update to MedalsActivity Count
+//        userMedals.setText(String.valueOf(userModel.getCoinsCount()));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(XIIStore.this, DashboardActivity.class);
+                Intent myIntent = new Intent(MedalsActivity.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }
