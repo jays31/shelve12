@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12;
 
 import android.app.Service;
 import android.content.Intent;
@@ -41,6 +41,7 @@ public class MusicService extends Service {
     public void onPause() {
         Log.i(TAG, "onPause()");
     }
+
     @Override
     public void onDestroy() {
         player.stop();

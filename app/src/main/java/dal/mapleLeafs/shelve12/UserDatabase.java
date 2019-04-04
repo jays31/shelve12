@@ -1,7 +1,6 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12;
 
 import android.content.Context;
-import android.database.Cursor;
 
 import java.util.ArrayList;
 import java.util.List;

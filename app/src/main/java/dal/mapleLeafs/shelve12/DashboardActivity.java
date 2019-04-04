@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -33,7 +33,6 @@ public class DashboardActivity extends AppCompatActivity
     private TextView userMedals;
     private Activity activity;
 
-
     UserDbHelper userDbHelper;
     private UserDatabase userDatabase;
     @Override
@@ -63,7 +62,6 @@ public class DashboardActivity extends AppCompatActivity
                 snack.show();
                 Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
                 startActivity(myIntent);
-
             }
         });
 
@@ -201,5 +199,8 @@ public class DashboardActivity extends AppCompatActivity
     protected void onDestroy(){
         super.onDestroy();
         userDatabase.closeDatabase();
+        Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
+        stopService(musicIntent);
     }
+
 }
