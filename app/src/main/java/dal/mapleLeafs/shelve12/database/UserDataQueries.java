@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import dal.mapleLeafs.shelve12.model.UserModel;
 
 public class UserDataQueries
 {

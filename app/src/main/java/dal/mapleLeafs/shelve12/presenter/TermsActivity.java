@@ -1,6 +1,7 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12.presenter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import dal.mapleLeafs.shelve12.R;
 
 import android.content.Intent;
 import android.os.Bundle;

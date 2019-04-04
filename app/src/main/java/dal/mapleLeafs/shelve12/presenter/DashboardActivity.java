@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12.presenter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,6 +15,11 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import dal.mapleLeafs.shelve12.model.MusicService;
+import dal.mapleLeafs.shelve12.R;
+import dal.mapleLeafs.shelve12.database.UserDatabase;
+import dal.mapleLeafs.shelve12.database.UserDbHelper;
+import dal.mapleLeafs.shelve12.model.UserModel;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,7 +37,6 @@ public class DashboardActivity extends AppCompatActivity
     private Button resetButton;
     private TextView userMedals;
     private Activity activity;
-
 
     UserDbHelper userDbHelper;
     private UserDatabase userDatabase;
@@ -63,7 +67,6 @@ public class DashboardActivity extends AppCompatActivity
                 snack.show();
                 Intent myIntent = new Intent(DashboardActivity.this, PlayActivity.class);
                 startActivity(myIntent);
-
             }
         });
 
@@ -201,5 +204,8 @@ public class DashboardActivity extends AppCompatActivity
     protected void onDestroy(){
         super.onDestroy();
         userDatabase.closeDatabase();
+        Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
+        stopService(musicIntent);
     }
+
 }

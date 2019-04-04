@@ -1,10 +1,9 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
-import android.util.Log;
 
 public class UserDbHelper extends SQLiteOpenHelper
 {

@@ -1,4 +1,4 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12.presenter;
 
 
 import android.content.Intent;
@@ -17,6 +17,7 @@ import com.google.zxing.WriterException;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import androidx.appcompat.app.AppCompatActivity;
+import dal.mapleLeafs.shelve12.R;
 
 public class QRCodeActivity extends AppCompatActivity {
 

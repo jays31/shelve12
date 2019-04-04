@@ -1,10 +1,12 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12.model;
 
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
+
+import dal.mapleLeafs.shelve12.R;
 
 public class MusicService extends Service {
     private static final String TAG = "MusicService";
@@ -41,6 +43,7 @@ public class MusicService extends Service {
     public void onPause() {
         Log.i(TAG, "onPause()");
     }
+
     @Override
     public void onDestroy() {
         player.stop();

@@ -1,6 +1,10 @@
-package jays.dal.test;
+package dal.mapleLeafs.shelve12.presenter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import dal.mapleLeafs.shelve12.R;
+import dal.mapleLeafs.shelve12.database.UserDatabase;
+import dal.mapleLeafs.shelve12.database.UserDbHelper;
+import dal.mapleLeafs.shelve12.model.UserModel;
 
 import android.app.Activity;
 import android.content.Intent;
