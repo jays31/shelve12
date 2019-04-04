@@ -1,4 +1,4 @@
-package dal.mapleLeafs.shelve12;
+package dal.mapleLeafs.shelve12.model;
 
 /**
  * This class will be

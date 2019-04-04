@@ -1,4 +1,4 @@
-package dal.mapleLeafs.shelve12;
+package dal.mapleLeafs.shelve12.presenter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,11 @@ import android.os.SystemClock;
 import android.os.Vibrator;
 import android.view.View;
 import androidx.cardview.widget.CardView;
+import dal.mapleLeafs.shelve12.model.GameLogic;
+import dal.mapleLeafs.shelve12.R;
+import dal.mapleLeafs.shelve12.database.UserDatabase;
+import dal.mapleLeafs.shelve12.database.UserDbHelper;
+import dal.mapleLeafs.shelve12.model.UserModel;
 
 import android.widget.TextView;
 

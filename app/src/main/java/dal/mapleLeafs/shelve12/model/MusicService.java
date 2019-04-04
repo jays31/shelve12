@@ -1,10 +1,12 @@
-package dal.mapleLeafs.shelve12;
+package dal.mapleLeafs.shelve12.model;
 
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
+
+import dal.mapleLeafs.shelve12.R;
 
 public class MusicService extends Service {
     private static final String TAG = "MusicService";

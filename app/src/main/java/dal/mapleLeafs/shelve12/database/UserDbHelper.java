@@ -1,4 +1,4 @@
-package dal.mapleLeafs.shelve12;
+package dal.mapleLeafs.shelve12.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

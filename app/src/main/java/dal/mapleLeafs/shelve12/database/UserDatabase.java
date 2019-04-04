@@ -1,9 +1,11 @@
-package dal.mapleLeafs.shelve12;
+package dal.mapleLeafs.shelve12.database;
 
 import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import dal.mapleLeafs.shelve12.model.UserModel;
 
 /**
  * This class will be used
