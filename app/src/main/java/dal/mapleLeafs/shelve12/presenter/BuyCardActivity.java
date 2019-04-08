@@ -110,12 +110,12 @@ public class BuyCardActivity extends AppCompatActivity {
                     coins = calc;
                     UserModel userModel = new UserModel(coins,"Manpreet");
                     userDatabase.updateUser(userModel);
-                    Snackbar snack = Snackbar.make(view, "The card ha been brought successfully.", Snackbar.LENGTH_LONG).setAction("Action", null);
+                    Snackbar snack = Snackbar.make(view, "The card has been purchased successfully.", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
 
                 }
                 else{
-                    Snackbar snack = Snackbar.make(view, "Insufficient Coins to buy this card.", Snackbar.LENGTH_LONG).setAction("Action", null);
+                    Snackbar snack = Snackbar.make(view, "Insufficient coins to buy this card.", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
                 }
 
