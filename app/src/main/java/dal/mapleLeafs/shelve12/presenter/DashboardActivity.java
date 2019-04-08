@@ -83,19 +83,7 @@ public class DashboardActivity extends AppCompatActivity
 
         });
 
-        final Switch simpleSwitch = (Switch) findViewById(R.id.simpleSwitch);
-        simpleSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
-                    startService(musicIntent);
-                } else {
-                    Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
-                    stopService(musicIntent);
 
-                }
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

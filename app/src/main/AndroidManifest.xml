@@ -23,6 +23,11 @@
             />
 
         <activity
+            android:name="dal.mapleLeafs.shelve12.presenter.BuyCardActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
             android:name="dal.mapleLeafs.shelve12.presenter.XIIStoreActivity"
             android:screenOrientation="portrait"
             />

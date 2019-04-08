@@ -87,4 +87,21 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
 
+    <string name="terms_and_conditions">
+        By downloading shelve 12 application from app store you are accepting the below mentioned terms and conditions:
+              </string>
+
+    <string name="point1">
+        Shelve 12 has the authoriy to ammend the rules any time depending upon the mutual agreement between maple leaves members.
+    </string>
+
+    <string name="point2">
+         You must be 10 years or older for the usage of this game application.Incase you are below 10 years old your parents or legal guardian must have reviewed the application before use.
+    </string>
+
+    <string name="point3">
+        Shelve 12 is the property of maple leaves.and in any circumstances, no assets of the application can be copied.
+    </string>
+
+
 </resources>
