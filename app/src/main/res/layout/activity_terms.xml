@@ -25,15 +25,20 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="72dp"
-        android:text="P R I V A C Y   P O L I C Y"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/textHint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="80dp"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:text="Terms And Conditions"
+        android:textAlignment="center"
+        android:theme="@style/RobotoTextViewStyle"
+        />
 
     <androidx.cardview.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -55,17 +60,94 @@
         >
 
         <TextView
-            android:id="@+id/terms"
+            android:id="@+id/terms_and_conditions"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:textSize="16dp"
-            android:theme="@style/RobotoTextViewStyle"
-            />
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/terms_and_conditions"
+            android:justificationMode="inter_word"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/point1"
+            android:textAlignment="viewStart"
+            android:justificationMode="inter_word"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="140dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/point2"
+            android:justificationMode="inter_word"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/point3"
+            android:justificationMode="inter_word"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            android:layout_marginLeft="10dp"
+            android:justificationMode="inter_word"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:text="I Accept the Terms and Conditions." />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_marginLeft="140dp"
+            android:textAlignment="center"
+            android:text="save" />
+
+
+
 
     </androidx.cardview.widget.CardView>
+
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
