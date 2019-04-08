@@ -40,8 +40,8 @@ public class TermsActivity extends AppCompatActivity {
 
         if(checkBoxValue.equals("1")){
             checkBoxBtn.setChecked(true);
-            //checkBoxBtn.setEnabled(false);
-            //  saveBtn.setEnabled(false);
+            checkBoxBtn.setEnabled(false);
+            saveBtn.setEnabled(false);
             //Toast.makeText(getApplicationContext(), "CheckBox checked", Toast.LENGTH_SHORT).show();
         }
         else{
