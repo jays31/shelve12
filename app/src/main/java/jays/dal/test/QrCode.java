@@ -22,7 +22,7 @@ import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class QRCode extends AppCompatActivity {
+public class QrCode extends AppCompatActivity {
 
     String TAG = "GenerateQRCode";
     ImageView qrImage;
@@ -39,7 +39,7 @@ public class QRCode extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
+                Intent myIntent = new Intent(QrCode.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }
@@ -49,7 +49,7 @@ public class QRCode extends AppCompatActivity {
         bar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
+                Intent myIntent = new Intent(QrCode.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }
@@ -80,7 +80,7 @@ public class QRCode extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent myIntent = new Intent(QRCode.this, DashboardActivity.class);
+        Intent myIntent = new Intent(QrCode.this, DashboardActivity.class);
         startActivity(myIntent);
     }
 }

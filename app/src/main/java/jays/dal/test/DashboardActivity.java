@@ -146,7 +146,7 @@ public class DashboardActivity extends AppCompatActivity
 //        }
 
         if (id == R.id.qrcode) {
-            Intent myIntent = new Intent(DashboardActivity.this, QRCode.class);
+            Intent myIntent = new Intent(DashboardActivity.this, QrCode.class);
             startActivity(myIntent);
             Toast toast = Toast.makeText(getApplicationContext(),"Share QR Code",
                     Toast.LENGTH_SHORT);
