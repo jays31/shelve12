@@ -27,9 +27,8 @@
 6. Created and implemeneted UserDatabase, UserDataQueries and UserDbHelper
 7. Implemented Haptic Feedback function
 8. Created TutorialActivity
-9. Created MusicService
-10. Added player images in Raw Resource folder
-11. Application Testing
+9. Added player images in Raw Resource folder
+10. Application Testing
 
 ## Abhinandan Walia (B00820613)
 1. Implemented CardExchange GameLogic in PlayActivity
