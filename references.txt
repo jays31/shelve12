@@ -1,3 +1,4 @@
 References
 
 1. https://questdot.com/android-image-gallery-horizontalscrollview-tutorial/
+2. https://www.c-sharpcorner.com/article/how-to-generate-qr-code-in-android/
