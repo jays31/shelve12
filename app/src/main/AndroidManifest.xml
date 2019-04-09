@@ -70,11 +70,6 @@
 
         </activity>
 
-        <service
-            android:name="dal.mapleLeafs.shelve12.model.MusicService"
-            android:enabled="true"
-            />
-
     </application>
 
 </manifest>
