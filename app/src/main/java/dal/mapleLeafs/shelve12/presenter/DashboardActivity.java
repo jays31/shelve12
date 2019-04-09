@@ -15,7 +15,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import dal.mapleLeafs.shelve12.model.MusicService;
 import dal.mapleLeafs.shelve12.R;
 import dal.mapleLeafs.shelve12.database.UserDatabase;
 import dal.mapleLeafs.shelve12.database.UserDbHelper;
@@ -24,8 +23,6 @@ import dal.mapleLeafs.shelve12.model.UserModel;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -192,8 +189,6 @@ public class DashboardActivity extends AppCompatActivity
     protected void onDestroy(){
         super.onDestroy();
         userDatabase.closeDatabase();
-        Intent musicIntent = new Intent(DashboardActivity.this, MusicService.class);
-        stopService(musicIntent);
     }
 
 }

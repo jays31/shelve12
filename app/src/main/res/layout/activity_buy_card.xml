@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BUY CARD"
+            android:text="P U R C H A S E"
             android:textSize="16dp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
@@ -56,8 +56,6 @@
         card_view:layout_constraintHorizontal_bias=".5"
         card_view:layout_constraintVertical_bias=".1"
         >
-
-        //put this code here
 
         <TextView
             android:id="@+id/Rank1"

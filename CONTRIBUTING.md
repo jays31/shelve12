@@ -15,7 +15,8 @@
 12. Integrated QRCodeActivity and MusicService
 13. Linked QRCodeActivity with menuItem on BottomAppBar
 14. added material NavBar icons in Raw Resource folder
-15. Application Testing
+15. Code compilation and merges
+16. Application Testing
 
 ## Manpreet Singh (B00821998)
 1. Created Cards in PlayActivity
@@ -45,12 +46,13 @@
 
 ## Shehzeen (B00812551)
 1. Implemented QRCodeActivity to display QR Code for a string
-2. Submitted Text for TermsActivity
+2. Implemented TermsActivity
+3. Created and implemented BuyCardActivity with card selection
+4. Implemented Save through Shared preferences in TermsActivity
 
 ## Rishabh Dhawan (B00826918)
-1. Added Music Switch on Dashboard
-2. Added code for MusicService
-3. Submitted Text for TutorialActivity
+1. Submitted Text for TutorialActivity
+2. Helped in GameLogic.java
 
 # Bug Fixes
 
@@ -75,7 +77,7 @@
 | 4. | UserModel.java | Manpreet Singh, Abhinandan Walia |
 | 5. | PlayActivity.java | Manpreet Singh, Abhinandan Walia |
 | 6. | GameLogic.java | Alfred Nketia |
-| 7. | MusicService.java | Rishabh Dhawan |
+| 7. | BuyCardActivity.java | Shehzeen |
 | 8. | QRCodeActivity.java | Shehzeen |
 | 9. | DashboardActivity.java | Jay Sharma |
 | 10. | MedalsActivity.java | Jay Sharma |
@@ -94,4 +96,5 @@
 | 23. | activity_qrcode.xml | Jay Sharma, Shehzeen |
 | 24. | cards.xml | Manpreet Singh |
 | 25. | RAW Assets | Jay Sharma, Manpreet Singh |
-| 26. | AppIcon - Image Asset | Jay Sharma |
+| 26. | activity_buy_card | Shehzeen |
+| 27. | AppIcon - Image Asset | Jay Sharma |
