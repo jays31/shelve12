@@ -22,8 +22,6 @@ public class TermsActivity extends AppCompatActivity {
 
     Button saveBtn;
     CheckBox checkBoxBtn;
-    //public static final String PREFS_NAME = "MyApp_Terms";
-    //SharedPreferences mySettings = getSharedPreferences(PREFS_NAME, 0);
     public SharedPreferences sharedPreferences;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +49,7 @@ public class TermsActivity extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(), "CheckBox un-checked", Toast.LENGTH_SHORT).show();
         }
 
+        //The below on click listener works on click of save button and save the variable in shared preference if its not saved already
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,31 +61,30 @@ public class TermsActivity extends AppCompatActivity {
                     editor.commit();
                     String checkBoxValue = sharedPreferences.getString("condition_check", "");
                     if(checkBoxValue.equals("1")){
+                        //The below code is for disabling the checkbox and button after fetching the sharedpreference value for checkbox.
                         checkBoxBtn.setChecked(true);
                         checkBoxBtn.setEnabled(false);
                         saveBtn.setEnabled(false);
-                        //Toast.makeText(getApplicationContext(), "CheckBox checked", Toast.LENGTH_SHORT).show();
                     }
-
-                    //Toast.makeText(getApplicationContext(), "CheckBox checked", Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    //The below code is for saving the variable in shared preferences.
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("condition_check", "0");
                     editor.commit();
-                    //Toast.makeText(getApplicationContext(), "CheckBox un-checked", Toast.LENGTH_SHORT).show();
                 }
                 Toast.makeText(getApplicationContext(), "Setting Saved.", Toast.LENGTH_SHORT).show();
             }
         });
 
         BottomAppBar bar = (BottomAppBar) findViewById(R.id.bottomAppBar2);
+
+        //The below click handler is for going to the dashboard screen.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(TermsActivity.this, DashboardActivity.class);
-                //  Intent myIntent = new Intent(TermsActivity.this, DashboardActivity.class);
                 startActivity(myIntent);
 
             }

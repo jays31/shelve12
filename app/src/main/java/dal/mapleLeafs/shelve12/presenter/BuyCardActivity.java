@@ -80,6 +80,7 @@ public class BuyCardActivity extends AppCompatActivity {
         leftSlide = (FloatingActionButton) findViewById(R.id.backslideleft);
         rightSlide = (FloatingActionButton) findViewById(R.id.backslideright);
 
+        //On click functionality for left side button
         leftSlide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +88,7 @@ public class BuyCardActivity extends AppCompatActivity {
 
             }
         });
-
+        //On click functionality for right side button
         rightSlide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +111,7 @@ public class BuyCardActivity extends AppCompatActivity {
                     coins = calc;
                     UserModel userModel = new UserModel(coins,"Manpreet");
                     userDatabase.updateUser(userModel);
-                    Snackbar snack = Snackbar.make(view, "The card ha been brought successfully.", Snackbar.LENGTH_LONG).setAction("Action", null);
+                    Snackbar snack = Snackbar.make(view, "The card has been purchased successfully.", Snackbar.LENGTH_LONG).setAction("Action", null);
                     snack.show();
 
                 }
@@ -132,11 +133,14 @@ public class BuyCardActivity extends AppCompatActivity {
         CoinsCardPrice.setText("Card Price: " + String.valueOf(coins));
         particularCoins = Integer.parseInt(userCardList.get(0).toString());
 
+        //The below lines of code is randomly generating the integer based on which the player image is fetched.
         Random r = new Random();
         int genRandom = r.nextInt(13 - 1) + 1;
         String selectedPlayer = "player" + Integer.toString(genRandom);
         Log.i("RANDOM VALUE:", Integer.toString(genRandom));
         ImageView imageFin = (ImageView)findViewById(R.id.ImageRank1);
+
+        //The below if else is for getting the picture from drawablw folder based on the random number.
         if(genRandom == 1) {
             imageFin.setImageResource(R.drawable.player1);
         }
@@ -213,21 +217,27 @@ public class BuyCardActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method will be used to fetch the card image , card price and total coins.
+     */
     public void randomFunctionCall()
     {
 
+        //Setting the total number of coins in the text box for display
         CoinsCard.setText("User Coins: " + String.valueOf(coins));
         generalCoins = coins;
-
+        //Setting the particular coin price in the text box
         CoinsCardPrice.setText("Card Price: " + String.valueOf(coins));
         particularCoins = coins;
 
+        //The below lines of code is randomly generating the integer based on which the player image is fetched.
         Random r = new Random();
         int genRandom = r.nextInt(13 - 1) + 1;
         String selectedPlayer = "player" + Integer.toString(genRandom);
         Log.i("RANDOM VALUE:", Integer.toString(genRandom));
         ImageView imageFin = (ImageView)findViewById(R.id.ImageRank1);
 
+        //The below if else is for getting the picture from drawable folder based on the random number.
         if(genRandom == 1) {
             imageFin.setImageResource(R.drawable.player1);
         }
@@ -268,6 +278,7 @@ public class BuyCardActivity extends AppCompatActivity {
         gameLogic.setUserplayer();
         List userCardList = new ArrayList(shuffledMapUserCads.values());
 
+        //The below code is for setting the text box value with the price of the card which is shown.
         textView1.setText("Rank "+String.valueOf(userCardList.get(0)));
         CoinsCardPrice.setText(" Card Price: " + String.valueOf(userCardList.get(0)));
         particularCoins = Integer.parseInt(String.valueOf(userCardList.get(0)));
@@ -305,6 +316,9 @@ public class BuyCardActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method will work when back button is pressed.
+     */
     @Override
     public void onBackPressed() {
         Intent myIntent = new Intent(BuyCardActivity.this, DashboardActivity.class);
